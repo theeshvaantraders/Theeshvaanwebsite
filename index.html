@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Theeshvaan Traders – Buy Raw Honey, Rose Gulkand, Black Pepper & Coconut Oil Online</title>
+<meta name="description" content="Theeshvaan Traders – bringing organic goodness to your plate since 2018. Raw, unprocessed Kombu, Moringa, Vaagai Poo and Wild Forest honey, honey blends, black pepper and wood-pressed coconut oil. Order on WhatsApp.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --maroon:#7B1518; --maroon-deep:#4A0B0E; --gold:#C99A3B; --gold-soft:#E7C77A; --gold-pale:#F6E7C1;
+  --bg:#FFFCF5; --surface:#FFFFFF; --surface-2:#FBF1DC; --ink:#2B1A12; --muted:#6E5B4C; --line:#EADBBE;
+  --on-dark:#FBF1DE; --wa:#1F8F4E;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#1A1110; --surface:#271A17; --surface-2:#31211C; --ink:#F6EBDD; --muted:#C5B19C; --line:#4A3329;
+    --gold:#DDB259; --gold-pale:#3A2A1E;
+    color-scheme: dark;
+  }
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:17px;line-height:1.55}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:Marcellus,"Trajan Pro",Georgia,serif;font-weight:400;line-height:1.15;margin:0}
+a{color:inherit}
+button,select,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ---------- Announcement bar ---------- */
+.announce{background:var(--maroon-deep);color:var(--gold-soft);font-size:14px;font-weight:600;text-align:center;height:36px;position:relative;overflow:hidden;letter-spacing:.02em}
+.announce p{margin:0;position:absolute;inset:0;display:grid;place-items:center;padding:0 12px;opacity:0;transition:opacity .5s}
+.announce p.on{opacity:1}
+.announce a{color:inherit;text-decoration:none}
+
+/* ---------- Header ---------- */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surface);z-index:30}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:78px}
+.bar .left{display:flex;align-items:center;gap:14px}
+.bar .right{display:flex;justify-content:flex-end;align-items:center;gap:14px}
+.phone{font-weight:600;font-size:15px;text-decoration:none;color:var(--muted);display:flex;align-items:center;gap:6px}
+.phone svg{width:18px;height:18px;fill:var(--wa)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo img{width:58px;height:58px}
+.logo .name{font-family:Marcellus,Georgia,serif;font-size:22px;letter-spacing:.06em;line-height:1;color:var(--maroon)}
+.logo .name small{display:block;font-family:"Source Sans 3",sans-serif;font-size:11.5px;letter-spacing:.18em;color:var(--gold);margin-top:5px}
+@media (prefers-color-scheme: dark){.logo .name{color:var(--gold-soft)}}
+.icon-btn{background:none;border:0;cursor:pointer;width:44px;height:44px;border-radius:10px;display:grid;place-items:center;position:relative}
+.icon-btn:hover{background:var(--surface-2)}
+.icon-btn svg{width:24px;height:24px}
+.badge{position:absolute;top:3px;right:1px;background:var(--maroon);color:#fff;font-size:11.5px;font-weight:700;min-width:19px;height:19px;border-radius:999px;display:grid;place-items:center;padding:0 5px}
+.cart-total{font-weight:700;font-size:15px}
+.bump{animation:bump .35s ease}
+@keyframes bump{50%{transform:scale(1.15)}}
+.menu-btn{display:none}
+nav.main{border-top:1px solid var(--line)}
+nav.main ul{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:4px;flex-wrap:wrap}
+nav.main a{display:block;padding:12px 16px;text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+nav.main a:hover{color:var(--maroon)}
+@media (prefers-color-scheme: dark){nav.main a:hover{color:var(--gold-soft)}}
+@media (max-width:860px){
+  .phone span,.cart-total{display:none}
+  .menu-btn{display:grid}
+  .logo img{width:46px;height:46px}
+  .logo .name{font-size:17px}
+  .logo .name small{display:none}
+  .bar{height:66px}
+  nav.main{display:none}
+  nav.main.open{display:block}
+  nav.main ul{flex-direction:column;padding:6px 0 10px}
+  nav.main a{padding:12px 20px}
+}
+@media (max-width:400px){.logo{gap:8px}.logo img{width:40px;height:40px}.logo .name{font-size:15px}.phone{display:none}.announce{font-size:13px}}
+
+/* ---------- Hero slider ---------- */
+.slider{position:relative;overflow:hidden}
+.slides{display:flex;transition:transform .6s ease}
+.slide{flex:0 0 100%;min-height:480px;display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.slide .txt{padding:48px 40px 48px max(20px, calc((100vw - 1240px)/2 + 20px))}
+.slide .kicker{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0 0 12px}
+.slide h2{font-size:clamp(34px,4.6vw,58px);margin-bottom:14px}
+.slide p.sub{font-size:18px;max-width:30em;margin:0 0 26px}
+.slide .pic{height:100%;min-height:480px;position:relative}
+.slide .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.s1{background:#F7ECD6;color:#2B1A12}
+.slide p.from{margin:-12px 0 22px;font-size:17px}
+.slide p.from b{font-family:Marcellus,Georgia,serif;font-size:30px;font-weight:400;margin-left:4px}
+.s1 p.from b{color:#7B1518}.s2 p.from b,.s3 p.from b{color:#E7C77A}
+.slide .pic.white{background:#FEFEFE}
+.slide .pic.white img{object-fit:contain;padding:24px 0}
+.s1 .kicker{color:#7B1518}
+.s2{background:linear-gradient(120deg,#5A0D11,#7B1518);color:#FBF1DE}
+.s2 .kicker{color:#E7C77A}
+.s3{background:#2E1B12;color:#FBF1DE}
+.s3 .kicker{color:#E7C77A}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:8px;padding:13px 26px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:15px;letter-spacing:.06em;text-transform:uppercase}
+.btn-maroon{background:#7B1518;color:#fff}
+.btn-maroon:hover{background:#4A0B0E}
+.btn-gold{background:#C99A3B;color:#2B1A12}
+.btn-gold:hover{background:#E7C77A}
+.btn-wa{background:var(--wa);color:#fff;text-transform:none;letter-spacing:0;font-size:16px}
+.btn-wa:hover{background:#18763F}
+.sl-arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.85);color:#2B1A12;cursor:pointer;display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.sl-arrow:hover{background:#fff}
+.sl-arrow svg{width:22px;height:22px}
+.sl-prev{left:14px}.sl-next{right:14px}
+.dots{position:absolute;left:50%;transform:translateX(-50%);bottom:14px;display:flex;justify-content:center;gap:8px;background:rgba(30,12,8,.45);padding:7px 12px;border-radius:999px}
+.dots button{width:11px;height:11px;border-radius:50%;border:2px solid #C99A3B;background:transparent;padding:0;cursor:pointer}
+.dots button[aria-current="true"]{background:#C99A3B}
+@media (max-width:760px){
+  .slide{grid-template-columns:1fr;min-height:0}
+  .slide .pic{order:-1;min-height:0;height:300px}
+  .slide .txt{padding:26px 22px 52px;text-align:center}
+  .slide p.sub{margin-left:auto;margin-right:auto;font-size:16.5px}
+  .sl-arrow{top:150px;width:40px;height:40px}
+}
+
+/* ---------- Trust strip ---------- */
+.trust{background:var(--surface-2);border-bottom:1px solid var(--line)}
+.trust ul{list-style:none;margin:0 auto;padding:18px 20px;display:grid;grid-template-columns:repeat(5,auto);justify-content:space-between;gap:14px}
+.cert-link{background:none;border:0;padding:0;cursor:pointer;display:grid;grid-template-columns:auto auto;column-gap:12px;align-items:center;text-align:left;font-weight:600;font-size:15px}
+.cert-link svg{grid-row:span 2}
+.cert-link small{font-size:13px;color:var(--maroon);text-decoration:underline;font-weight:700}
+@media (prefers-color-scheme: dark){.cert-link small{color:var(--gold-soft)}}
+.trust li{display:flex;align-items:center;gap:12px;justify-content:center;font-weight:600;font-size:15px}
+.trust svg{width:34px;height:34px;flex:none;color:var(--maroon)}
+@media (prefers-color-scheme: dark){.trust svg{color:var(--gold)}}
+@media (max-width:1000px){.trust ul{grid-template-columns:1fr 1fr;justify-content:stretch}.trust li{justify-content:flex-start}.trust li:last-child{grid-column:span 2}}
+
+/* ---------- Section headings ---------- */
+section{padding:64px 0}
+.head{text-align:center;margin-bottom:34px}
+.head h2{font-size:clamp(26px,3.4vw,38px);letter-spacing:.08em;text-transform:uppercase;color:var(--maroon)}
+@media (prefers-color-scheme: dark){.head h2{color:var(--gold-soft)}}
+.orn{display:block;margin:12px auto 0;width:150px;height:14px;color:var(--gold)}
+.head p{margin:12px auto 0;color:var(--muted);max-width:40em}
+
+/* ---------- Story ---------- */
+.story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.story .photo{border-radius:16px;overflow:hidden;aspect-ratio:4/5;width:min(100%,460px);justify-self:center}
+.story .photo img{width:100%;height:100%;object-fit:cover}
+.story .head{text-align:left;margin-bottom:20px}
+.story .orn{margin-left:0}
+.story p{margin:0 0 14px;font-size:17.5px}
+.story .points{list-style:none;padding:0;margin:22px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:12px 20px}
+.story .points li{display:flex;gap:10px;align-items:flex-start;font-weight:600}
+.story .points svg{width:22px;height:22px;flex:none;color:var(--gold);margin-top:1px}
+@media (max-width:860px){.story .wrap{grid-template-columns:1fr;gap:30px}.story .photo{aspect-ratio:1;width:min(100%,420px)}}
+
+/* ---------- Categories ---------- */
+.cats{background:var(--surface-2)}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.cat{background:none;border:0;cursor:pointer;text-align:center;padding:0;text-decoration:none;color:inherit}
+.cat .ring{aspect-ratio:1;border-radius:50%;padding:6px;background:linear-gradient(135deg,#E7C77A,#C99A3B 50%,#8A6420);transition:transform .25s}
+.cat:hover .ring{transform:translateY(-4px)}
+.cat .ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:#fff}
+.cat h3{margin-top:16px;font-size:21px;letter-spacing:.04em}
+.cat span{display:block;color:var(--muted);font-size:14.5px;margin-top:4px}
+@media (max-width:760px){.cat-grid{grid-template-columns:1fr 1fr;gap:22px 16px}.cat h3{font-size:18px}}
+
+/* ---------- Product cards ---------- */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.card[hidden]{display:none}
+.card .tag{position:absolute;top:12px;left:12px;background:var(--maroon);color:#fff;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;z-index:1}
+.card .pic{aspect-ratio:4/5;background:#fff;overflow:hidden}
+.card .pic img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.card:hover .pic img{transform:scale(1.04)}
+.card .pic.contain img{object-fit:contain;padding:10px}
+.card .body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:20px}
+.card .desc{margin:0;color:var(--muted);font-size:14.5px;line-height:1.5}
+.row{display:flex;align-items:center;gap:8px}
+.field-label{font-size:12.5px;font-weight:700;color:var(--muted);display:block;margin-bottom:4px;letter-spacing:.04em}
+.size{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface-2);font-weight:600;cursor:pointer}
+.size:disabled{cursor:default;opacity:1}
+.price{font-family:Marcellus,Georgia,serif;font-size:24px;color:var(--maroon);margin-top:auto}
+.price small{font-family:"Source Sans 3",sans-serif;font-size:13.5px;color:var(--muted);margin-left:6px}
+@media (prefers-color-scheme: dark){.price{color:var(--gold-soft)}}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface-2);flex:none}
+.qty button{width:32px;height:42px;border:0;background:transparent;font-size:19px;cursor:pointer;font-weight:700}
+.qty button:hover{background:var(--line)}
+.qty input{width:32px;height:42px;border:0;text-align:center;background:transparent;font-weight:700;-moz-appearance:textfield;appearance:textfield}
+.qty input::-webkit-outer-spin-button,.qty input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.add{flex:1;min-width:0;padding:0 8px;height:44px;background:var(--maroon);color:#fff;border:0;border-radius:8px;font-weight:700;cursor:pointer;white-space:nowrap;font-size:15px}
+.add:hover{background:var(--maroon-deep)}
+.add.done{background:#2E6B3A}
+.quick{font-size:14px;font-weight:600;color:#1C7F45;text-decoration:none;align-self:center}
+.quick:hover{text-decoration:underline}
+@media (prefers-color-scheme: dark){.quick{color:#5FD08E}}
+
+/* Bestseller carousel */
+.rail-wrap{position:relative}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 66px)/4);gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;scrollbar-width:thin}
+.rail .card{scroll-snap-align:start}
+.rail-btn{position:absolute;top:36%;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);cursor:pointer;display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.12);z-index:2}
+.rail-btn svg{width:20px;height:20px}
+.rail-prev{left:-14px}.rail-next{right:-14px}
+@media (max-width:1100px){.rail{grid-auto-columns:calc((100% - 44px)/3)}}
+@media (max-width:860px){.rail{grid-auto-columns:calc((100% - 22px)/2)}}
+@media (max-width:560px){.rail{grid-auto-columns:80%}.rail-btn{display:none}}
+
+/* Gift banner */
+.gift{padding:0}
+.gift-box{display:grid;grid-template-columns:1fr 1.1fr;border-radius:18px;overflow:hidden;background:linear-gradient(120deg,#4A0B0E,#7B1518);color:#FBF1DE}
+.gift-box .pic{min-height:380px;position:relative}
+.gift-box .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 62%}
+.gift-box .txt{padding:44px 44px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.gift-box .kicker{color:#E7C77A;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0}
+.gift-box h2{font-size:clamp(28px,3.4vw,42px)}
+.gift-box p{margin:0;font-size:17.5px;color:#F3DFC2}
+.gift-box .jars{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 6px}
+.gift-box .jars span{border:1px solid rgba(231,199,122,.55);border-radius:999px;padding:5px 12px;font-size:14px;font-weight:600}
+.gift-box .buy{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.gift-box .gprice{font-family:Marcellus,serif;font-size:34px;color:#E7C77A}
+@media (max-width:760px){.gift-box{grid-template-columns:1fr}.gift-box .pic{min-height:300px}.gift-box .txt{padding:28px 22px}}
+
+/* All products */
+.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:-10px 0 28px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:9px 18px;font-weight:700;font-size:14px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--maroon);border-color:var(--maroon);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+
+/* How to order */
+.how{background:var(--surface-2)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;list-style:none;padding:0;margin:0;counter-reset:s;text-align:center}
+.steps li{counter-increment:s}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:52px;height:52px;margin:0 auto 14px;border-radius:50%;border:2px solid var(--gold);color:var(--maroon);font-family:Marcellus,serif;font-size:22px;background:var(--surface)}
+@media (prefers-color-scheme: dark){.steps li::before{color:var(--gold-soft)}}
+.steps h3{font-size:19px;margin-bottom:6px}
+.steps p{margin:0;color:var(--muted);font-size:15.5px}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+
+/* Footer */
+footer{background:#2A120F;color:#EADCC8;padding:56px 0 calc(28px + env(safe-area-inset-bottom,0px))}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px}
+footer h4{font-family:Marcellus,serif;font-weight:400;font-size:18px;letter-spacing:.08em;text-transform:uppercase;color:#E7C77A;margin:0 0 14px}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin:0 0 8px}
+footer a{text-decoration:none;color:#EADCC8}
+footer a:hover{color:#E7C77A}
+footer p{margin:0 0 8px}
+.fbrand img{width:96px;height:96px;margin-bottom:14px}
+.fbrand img.fssai{width:198px;height:auto;margin:0;border-radius:8px}
+.fssai-btn{background:none;border:0;padding:0;margin-top:16px;cursor:pointer;display:flex;flex-direction:column;gap:8px;align-items:flex-start;color:#E7C77A;font-weight:700;font-size:14.5px;text-decoration:underline}
+.fbottom{border-top:1px solid rgba(231,199,122,.25);margin-top:40px;padding-top:20px;font-size:14px;color:#BFA98F;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-bottom:60px}
+@media (max-width:860px){.fgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.fgrid{grid-template-columns:1fr}}
+
+/* Floating WhatsApp */
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:15}
+.fab svg{width:30px;height:30px;fill:#fff}
+
+
+/* ---------- Flying bees ---------- */
+.bees{position:fixed;inset:0;pointer-events:none;z-index:14;overflow:hidden}
+.bee{position:absolute;left:0;top:0;width:30px;height:26px;will-change:transform}
+.bee svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 2px 2px rgba(0,0,0,.18))}
+.bee .wing{transform-box:fill-box;transform-origin:50% 100%;animation:flap .09s ease-in-out infinite alternate}
+.bee .wing.back{animation-delay:.045s}
+@keyframes flap{from{transform:scaleY(1) rotate(-8deg)}to{transform:scaleY(.25) rotate(8deg)}}
+@media (prefers-reduced-motion: reduce){.bees{display:none}}
+
+
+/* FSSAI certificate dialog */
+dialog.cert{width:min(720px,94vw);max-height:90vh;padding:0;border:0;border-radius:14px;background:var(--bg);color:var(--ink);display:none;flex-direction:column}
+dialog.cert[open]{display:flex}
+dialog.cert::backdrop{background:rgba(20,8,6,.6)}
+.cert-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.cert-head h2{font-size:21px}
+.cert-body{overflow:auto;padding:18px}
+.cert-body img{width:100%;height:auto;border:1px solid var(--line);border-radius:6px;background:#fff}
+.cert-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 16px}
+.cert-facts div{background:var(--surface-2);border-radius:8px;padding:10px 12px}
+.cert-facts dt{font-size:12.5px;color:var(--muted);font-weight:700}
+.cert-facts dd{margin:2px 0 0;font-weight:700}
+.cert-foot{padding:14px 18px;border-top:1px solid var(--line);display:flex;justify-content:flex-end}
+@media (max-width:560px){.cert-facts{grid-template-columns:1fr}}
+
+/* Cart drawer */
+.scrim{position:fixed;inset:0;background:rgba(20,8,6,.55);opacity:0;pointer-events:none;transition:opacity .25s;z-index:40}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--bg);z-index:41;transform:translateX(100%);visibility:hidden;transition:transform .3s ease,visibility 0s .3s;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.drawer.open{transform:none;visibility:visible;transition:transform .3s ease}
+.drawer .dhead{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--line)}
+.drawer .dhead h2{font-size:24px;letter-spacing:.06em;text-transform:uppercase}
+.items{flex:1;overflow:auto;padding:8px 20px}
+.item{display:grid;grid-template-columns:62px 1fr auto;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);align-items:center}
+.item img{width:62px;height:62px;object-fit:cover;border-radius:8px;background:#fff}
+.item b{display:block;font-weight:700}
+.item .meta{color:var(--muted);font-size:14px}
+.item .qty button{width:30px;height:34px;font-size:17px}
+.item .qty input{width:32px;height:34px}
+.item .line{font-weight:700;text-align:right}
+.item .rm{background:none;border:0;color:var(--muted);font-size:13.5px;cursor:pointer;text-decoration:underline;padding:2px 0}
+.empty{padding:40px 0;text-align:center;color:var(--muted)}
+.checkout{border-top:1px solid var(--line);padding:16px 20px;display:flex;flex-direction:column;gap:10px;background:var(--surface)}
+.total{display:flex;justify-content:space-between;font-size:20px;font-weight:700}
+.checkout input,.checkout textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.checkout textarea{resize:vertical;min-height:62px}
+.checkout .note{font-size:13.5px;color:var(--muted);margin:0}
+.checkout .btn-wa[disabled]{opacity:.5;cursor:not-allowed}
+</style>
+</head>
+<body>
+
+<!-- Announcement bar -->
+<div class="announce" aria-live="polite">
+  <p class="on"><a href="https://wa.me/919445414282" target="_blank" rel="noopener">Order on WhatsApp: +91 94454 14282</a></p>
+  <p><a href="#gift">Honey Taster Pack – 4 honeys for ₹350</a></p>
+  <p>Raw, unprocessed honey since 2018</p>
+</div>
+
+<!-- Header -->
+<header class="top">
+  <div class="wrap bar">
+    <div class="left">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <a class="phone" href="https://wa.me/919445414282" target="_blank" rel="noopener" aria-label="WhatsApp +91 94454 14282">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm5.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4.9 2.9.8 3.4.7.5-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+        <span>+91 94454 14282</span>
+      </a>
+    </div>
+    <a class="logo" href="#top">
+      <img src="images/logo.png" alt="" width="58" height="58">
+      <span class="name">THEESHVAAN<small>TRADERS · SINCE 2018</small></span>
+    </a>
+    <div class="right">
+      <span class="cart-total" id="cartTotalTop">₹0</span>
+      <button class="icon-btn" id="cartBtn" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+  <nav class="main" id="mainNav" aria-label="Main">
+    <ul>
+      <li><a href="#shop" data-filter="all">All products</a></li>
+      <li><a href="#shop" data-filter="honey">Raw honey</a></li>
+      <li><a href="#shop" data-filter="blend">Honey blends</a></li>
+      <li><a href="#shop" data-filter="pantry">Spices &amp; oils</a></li>
+      <li><a href="#gift">Gifting</a></li>
+      <li><a href="#story">Our story</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- Hero slider -->
+  <div class="slider" aria-roledescription="carousel" aria-label="Featured products">
+    <div class="slides" id="slides"></div>
+    <button class="sl-arrow sl-prev" id="slPrev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="sl-arrow sl-next" id="slNext" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    <div class="dots" id="dots"></div>
+  </div>
+
+  <!-- Trust strip -->
+  <div class="trust">
+    <ul class="wrap">
+      <li><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4l14 8v16l-14 8-14-8V12z"/><path d="M14 20l4 4 8-8"/></svg>100% pure &amp; natural</li>
+      <li><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6c-6 8-10 13-10 18a10 10 0 0 0 20 0c0-5-4-10-10-18z"/><path d="M8 8l24 24"/></svg>No added sugar</li>
+      <li><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 30c0-12 8-20 24-22-1 16-9 24-21 24"/><path d="M8 32l14-14"/></svg>Raw &amp; unprocessed</li>
+      <li><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="14"/><path d="M20 12v8l5 4"/></svg>Trusted since 2018</li>
+      <li><button type="button" class="cert-link" data-cert><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="5" width="24" height="30" rx="2"/><path d="M13 13h14M13 19h14M13 25h8"/><circle cx="28" cy="29" r="5" fill="var(--surface-2)"/><path d="M26 29l1.5 1.5L30.5 27.5"/></svg>FSSAI registered<small>View certificate</small></button></li>
+    </ul>
+  </div>
+
+  <!-- Story -->
+  <section class="story" id="story">
+    <div class="wrap">
+      <div class="photo"><img src="images/moringa-honey.jpg" alt="Moringa Honey jar on a kitchen table" loading="lazy"></div>
+      <div>
+        <div class="head">
+          <h2>How we bring you the best</h2>
+          <svg class="orn" viewBox="0 0 150 14" aria-hidden="true"><path d="M0 7h60M90 7h60" stroke="currentColor"/><path d="M75 1l6 6-6 6-6-6z" fill="currentColor"/></svg>
+        </div>
+        <p>Since 2018, Theeshvaan Traders has been bringing organic goodness to your plate. Our honey is naturally harvested from kombu, moringa, vaagai and wild forest flowers, and bottled raw, unfiltered and unprocessed.</p>
+        <p>Nothing is added and nothing is taken away, so each honey keeps the taste and colour of the flowers it comes from.</p>
+        <ul class="points">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg>Naturally harvested</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg>No preservatives</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg>Wood-pressed oil</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg>Handpicked spices</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="cats">
+    <div class="wrap">
+      <div class="head">
+        <h2>Shop by category</h2>
+        <svg class="orn" viewBox="0 0 150 14" aria-hidden="true"><path d="M0 7h60M90 7h60" stroke="currentColor"/><path d="M75 1l6 6-6 6-6-6z" fill="currentColor"/></svg>
+      </div>
+      <div class="cat-grid">
+        <a class="cat" href="#shop" data-filter="honey"><div class="ring"><img src="images/kombu-honey.jpg" alt="" loading="lazy"></div><h3>Raw Honey</h3><span>Kombu, Moringa, Vaagai, Wild Forest</span></a>
+        <a class="cat" href="#shop" data-filter="blend"><div class="ring"><img src="images/fig-with-honey.jpg" alt="" loading="lazy"></div><h3>Honey Blends</h3><span>Gulkand, Amla, Fig</span></a>
+        <a class="cat" href="#shop" data-filter="pantry"><div class="ring"><img src="images/black-pepper.jpg" alt="" loading="lazy"></div><h3>Spices &amp; Oils</h3><span>Black pepper, Coconut oil</span></a>
+        <a class="cat" href="#gift"><div class="ring"><img src="images/taster-pack.jpg" alt="" loading="lazy"></div><h3>Gifting</h3><span>Honey taster pack</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bestsellers -->
+  <section id="bestsellers">
+    <div class="wrap">
+      <div class="head">
+        <h2>Our bestsellers</h2>
+        <svg class="orn" viewBox="0 0 150 14" aria-hidden="true"><path d="M0 7h60M90 7h60" stroke="currentColor"/><path d="M75 1l6 6-6 6-6-6z" fill="currentColor"/></svg>
+      </div>
+      <div class="rail-wrap">
+        <button class="rail-btn rail-prev" data-dir="-1" aria-label="Scroll left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <div class="rail" id="rail"></div>
+        <button class="rail-btn rail-next" data-dir="1" aria-label="Scroll right"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gift banner -->
+  <section class="gift" id="gift">
+    <div class="wrap">
+      <div class="gift-box">
+        <div class="pic"><img src="images/taster-pack.jpg" alt="Honey Taster Pack gift box with four jars" loading="lazy"></div>
+        <div class="txt">
+          <p class="kicker">Gifting &amp; combos</p>
+          <h2>Honey Taster Pack</h2>
+          <p>Can’t decide which honey to try? Get four 50 g jars in one gift box. A thoughtful gift for festivals, family and friends.</p>
+          <div class="jars"><span>Kombu</span><span>Moringa</span><span>Vaagai Poo</span><span>Wild Forest</span></div>
+          <div class="buy">
+            <span class="gprice">₹350</span>
+            <button class="btn btn-gold" id="giftAdd">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- All products -->
+  <section id="shop">
+    <div class="wrap">
+      <div class="head">
+        <h2>All products</h2>
+        <svg class="orn" viewBox="0 0 150 14" aria-hidden="true"><path d="M0 7h60M90 7h60" stroke="currentColor"/><path d="M75 1l6 6-6 6-6-6z" fill="currentColor"/></svg>
+        <p>Choose a size, set the quantity and add to your cart.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter products">
+        <button class="chip" data-cat="all" aria-pressed="true">All</button>
+        <button class="chip" data-cat="honey" aria-pressed="false">Raw honey</button>
+        <button class="chip" data-cat="blend" aria-pressed="false">Honey blends</button>
+        <button class="chip" data-cat="pantry" aria-pressed="false">Spices &amp; oils</button>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <!-- How to order -->
+  <section class="how" id="how">
+    <div class="wrap">
+      <div class="head">
+        <h2>How to order</h2>
+        <svg class="orn" viewBox="0 0 150 14" aria-hidden="true"><path d="M0 7h60M90 7h60" stroke="currentColor"/><path d="M75 1l6 6-6 6-6-6z" fill="currentColor"/></svg>
+      </div>
+      <ol class="steps">
+        <li><h3>Choose products</h3><p>Pick the size and quantity for each product.</p></li>
+        <li><h3>Add to cart</h3><p>Review your cart and enter your name and address.</p></li>
+        <li><h3>Send on WhatsApp</h3><p>Your order details are typed in for you. Just tap send.</p></li>
+        <li><h3>Pay &amp; receive</h3><p>We confirm the total and delivery charges, then share payment details.</p></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <img src="images/logo.png" alt="Theeshvaan Traders logo" width="96" height="96" loading="lazy">
+        <p>Bringing organic goodness to your plate since 2018.</p>
+        <button type="button" class="fssai-btn" data-cert aria-label="View FSSAI registration certificate, Lic. No. 22426072000146"><img class="fssai" src="images/fssai.png" alt="" width="198" height="89" loading="lazy"><span>View FSSAI certificate</span></button>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#shop" data-filter="honey">Raw honey</a></li>
+          <li><a href="#shop" data-filter="blend">Honey blends</a></li>
+          <li><a href="#shop" data-filter="pantry">Spices &amp; oils</a></li>
+          <li><a href="#gift">Gifting</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#how">How to order</a></li>
+          <li><a href="#fssai" data-cert>FSSAI certificate</a></li>
+          <li><a href="#story">Our story</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact us</h4>
+        <p>Orders and enquiries on Call / WhatsApp</p>
+        <p><a href="https://wa.me/919445414282" target="_blank" rel="noopener"><b>+91 94454 14282</b></a></p>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>© <span id="yr">2026</span> Theeshvaan Traders. All rights reserved.</span>
+      <span>FSSAI Lic. No. 22426072000146</span>
+      <span>Bringing organic goodness to your plate</span>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/919445414282" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4.9 2.9.8 3.4.7.5-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zM20.5 3.5C18.2 1.2 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4z"/></svg>
+</a>
+
+
+<!-- Flying bees (decoration) -->
+<div class="bees" id="bees" aria-hidden="true"></div>
+<template id="beeTpl">
+  <svg viewBox="0 0 40 34">
+    <ellipse class="wing back" cx="17" cy="9" rx="7" ry="9" fill="#DCEFFF" fill-opacity=".75" stroke="#9BB7CC" stroke-width=".8"/>
+    <ellipse class="wing" cx="23" cy="9" rx="7" ry="9" fill="#EAF6FF" fill-opacity=".85" stroke="#9BB7CC" stroke-width=".8"/>
+    <path d="M4 22 L0 22.5 L4 23.5Z" fill="#3A2412"/>
+    <ellipse cx="18" cy="22" rx="14" ry="9" fill="#F2B321"/>
+    <path d="M11 13.8c-1.6 5.2-1.6 11.2 0 16.4" stroke="#3A2412" stroke-width="3.4" fill="none"/>
+    <path d="M18 13c-1.4 5.5-1.4 12.5 0 18" stroke="#3A2412" stroke-width="3.4" fill="none"/>
+    <path d="M25 14c-1 4.8-1 11.2 0 16" stroke="#3A2412" stroke-width="3" fill="none"/>
+    <circle cx="33" cy="20.5" r="6" fill="#3A2412"/>
+    <circle cx="35" cy="19" r="1.5" fill="#fff"/>
+    <path d="M34 15c1-3 2.5-4.5 4-5M31.5 15c0-3 .8-5 2-6.5" stroke="#3A2412" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+  </svg>
+</template>
+
+
+<dialog class="cert" id="certDlg" aria-labelledby="certTitle">
+  <div class="cert-head">
+    <h2 id="certTitle">FSSAI Registration Certificate</h2>
+    <button type="button" class="icon-btn" id="certClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="cert-body">
+    <dl class="cert-facts">
+      <div><dt>Registration No.</dt><dd>22426072000146</dd></div>
+      <div><dt>Valid up to</dt><dd>09-02-2027</dd></div>
+      <div><dt>Issued by</dt><dd>Food Safety Wing, Govt. of Tamil Nadu</dd></div>
+    </dl>
+    <img src="images/fssai-certificate.jpg" alt="FSSAI registration certificate number 22426072000146" loading="lazy" width="910" height="1287">
+  </div>
+  <div class="cert-foot">
+    <a class="btn btn-maroon" href="files/fssai-certificate.pdf" target="_blank" rel="noopener">Open full certificate (PDF)</a>
+  </div>
+</dialog>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Your cart" aria-hidden="true">
+  <div class="dhead">
+    <h2>Your cart</h2>
+    <button class="icon-btn" id="closeCart" aria-label="Close cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="items" id="items"></div>
+  <div class="checkout">
+    <div class="total"><span>Total</span><span id="total">₹0</span></div>
+    <input id="custName" type="text" placeholder="Your name" autocomplete="name">
+    <textarea id="custAddr" placeholder="Delivery address with pincode" autocomplete="street-address"></textarea>
+    <p class="note">Delivery charges, if any, will be confirmed on WhatsApp.</p>
+    <button class="btn btn-wa" id="sendOrder">Send order on WhatsApp</button>
+  </div>
+</aside>
+
+<script>
+/* ============================================================
+   EDIT YOUR PRODUCTS HERE
+   - To change a price, change the number next to the size.
+   - To add a size, add another ["size", price] pair.
+   - To add a product, copy one block { ... } and change it.
+   - bestseller:true shows the product in "Our bestsellers".
+   ============================================================ */
+const WHATSAPP_NUMBER = "919445414282";
+
+const PRODUCTS = [
+  { id:"kombu", kicker:"Senthen wild natural", name:"Kombu Honey", cat:"honey", img:"images/kombu-honey.jpg", fit:"contain", bestseller:true,
+    desc:"Senthen wild natural honey. Raw, unfiltered and unprocessed.",
+    sizes:[["500 g",550],["1 kg",950]] },
+  { id:"moringa", kicker:"From moringa blossoms", name:"Moringa Honey", cat:"honey", img:"images/moringa-honey.jpg", bestseller:true,
+    desc:"Collected from moringa blossoms. Pure and raw, with no added sugar.",
+    sizes:[["500 g",850],["1 kg",1600]] },
+  { id:"wildforest", kicker:"Senthen wild natural", name:"Wild Forest Honey", cat:"honey", img:"images/wild-forest-honey.jpg", fit:"contain", bestseller:true,
+    desc:"Senthen wild natural honey from forest flowers. Raw, unfiltered and unprocessed.",
+    sizes:[["500 g",350],["1 kg",600]] },
+  { id:"vaagai", kicker:"From the vaagai flower", name:"Vaagai Poo Honey", cat:"honey", img:"images/vaagai-poo-honey.jpg", bestseller:true,
+    desc:"From the nectar of vaagai (Albizia lebbeck) flowers. No added sugar or preservatives.",
+    sizes:[["500 g",450],["1 kg",800]] },
+  { id:"taster", kicker:"Perfect for gifting", name:"Honey Taster Pack", cat:"honey", img:"images/taster-pack.jpg", tag:"Gift pack",
+    desc:"Four 50 g jars: Kombu, Moringa, Vaagai Poo and Wild Forest honey.",
+    sizes:[["4 × 50 g",350]] },
+  { id:"gulkand", kicker:"Made with real Damask roses", name:"Damask Rose Gulkand", cat:"blend", img:"images/rose-gulkand.jpg", bestseller:true,
+    desc:"Made with real Damask roses, the traditional way.",
+    sizes:[["250 g",295],["500 g",550],["1 kg",1000]] },
+  { id:"amla", kicker:"A traditional recipe", name:"Amla With Honey", cat:"blend", img:"images/amla-with-honey.jpg",
+    desc:"Amla (Indian gooseberry) preserved in pure honey.",
+    sizes:[["500 g",300],["1 kg",550]] },
+  { id:"fig", kicker:"A traditional recipe", name:"Fig With Honey", cat:"blend", img:"images/fig-with-honey.jpg", bestseller:true,
+    desc:"Real figs in pure honey, with no added sugar.",
+    sizes:[["250 g",350],["500 g",650],["1 kg",1200]] },
+  { id:"pepper", kicker:"Handpicked & sun-dried", name:"Black Pepper", cat:"pantry", img:"images/black-pepper.jpg",
+    desc:"Handpicked, sun-dried whole peppercorns. No preservatives or additives.",
+    sizes:[["100 g",120],["250 g",300],["500 g",550]] },
+  { id:"coconut", kicker:"Wood-pressed & unrefined", name:"Coconut Oil", cat:"pantry", img:"images/coconut-oil.jpg", fit:"contain",
+    desc:"Wood-pressed and unrefined. 100% pure and natural.",
+    sizes:[["500 ml",375],["1 litre",600]] }
+];
+/* ================= end of product list ================= */
+
+const rupee = n => "₹" + n.toLocaleString("en-IN");
+const byId = id => PRODUCTS.find(p => p.id === id);
+const clampQty = v => Math.max(1, Math.min(99, parseInt(v, 10) || 1));
+const waLink = text => "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text);
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+let cart = [];
+try { cart = JSON.parse(localStorage.getItem("tt-cart") || "[]").filter(l => byId(l.id) && byId(l.id).sizes[l.s]); } catch (e) { cart = []; }
+function save(){ try { localStorage.setItem("tt-cart", JSON.stringify(cart)); } catch (e) {} }
+
+/* ---------- Product card builder ---------- */
+function makeCard(p, prefix){
+  const card = document.createElement("article");
+  card.className = "card";
+  card.dataset.cat = p.cat;
+  if (prefix === "g") card.id = "p-" + p.id;
+  const uid = prefix + "-" + p.id;
+  const opts = p.sizes.map((s, i) => `<option value="${i}">${s[0]} – ${rupee(s[1])}</option>`).join("");
+  card.innerHTML = `
+    ${p.tag ? `<span class="tag">${p.tag}</span>` : ""}
+    <div class="pic ${p.fit === "contain" ? "contain" : ""}"><img src="${p.img}" alt="${p.name}" loading="lazy"></div>
+    <div class="body">
+      <h3>${p.name}</h3>
+      <p class="desc">${p.desc}</p>
+      <div>
+        <label class="field-label" for="size-${uid}">Size</label>
+        <select class="size" id="size-${uid}" ${p.sizes.length === 1 ? "disabled" : ""}>${opts}</select>
+      </div>
+      <div class="price"><span class="amt"></span><small class="each"></small></div>
+      <div class="row">
+        <div class="qty">
+          <button type="button" class="minus" aria-label="Decrease quantity">−</button>
+          <input type="number" min="1" max="99" value="1" inputmode="numeric" aria-label="Quantity">
+          <button type="button" class="plus" aria-label="Increase quantity">+</button>
+        </div>
+        <button type="button" class="add">Add to cart</button>
+      </div>
+      <a class="quick" href="#" target="_blank" rel="noopener">or order now on WhatsApp</a>
+    </div>`;
+  const sel = card.querySelector(".size"), inp = card.querySelector(".qty input");
+  const amt = card.querySelector(".amt"), each = card.querySelector(".each");
+  const quick = card.querySelector(".quick"), add = card.querySelector(".add");
+  function refresh(){
+    const s = p.sizes[sel.value], q = clampQty(inp.value);
+    amt.textContent = rupee(s[1] * q);
+    each.textContent = q > 1 ? `${q} × ${rupee(s[1])}` : "";
+    quick.href = waLink(`Hello Theeshvaan Traders, I’d like to order:\n${p.name} (${s[0]}) × ${q} = ${rupee(s[1] * q)}`);
+  }
+  sel.addEventListener("change", refresh);
+  inp.addEventListener("input", refresh);
+  inp.addEventListener("change", () => { inp.value = clampQty(inp.value); refresh(); });
+  card.querySelector(".minus").onclick = () => { inp.value = clampQty(inp.value - 1); refresh(); };
+  card.querySelector(".plus").onclick = () => { inp.value = clampQty(+inp.value + 1); refresh(); };
+  add.onclick = () => { addToCart(p.id, +sel.value, clampQty(inp.value)); flash(add); };
+  refresh();
+  return card;
+}
+function flash(btn){
+  const old = btn.textContent;
+  btn.textContent = "Added ✓"; btn.classList.add("done");
+  setTimeout(() => { btn.textContent = old; btn.classList.remove("done"); }, 1400);
+}
+
+const grid = document.getElementById("grid"), rail = document.getElementById("rail");
+PRODUCTS.forEach(p => grid.appendChild(makeCard(p, "g")));
+PRODUCTS.filter(p => p.bestseller).forEach(p => rail.appendChild(makeCard(p, "b")));
+
+/* ---------- Bestseller rail arrows ---------- */
+document.querySelectorAll(".rail-btn").forEach(b => b.onclick = () => {
+  const card = rail.querySelector(".card");
+  rail.scrollBy({ left: (card.offsetWidth + 22) * +b.dataset.dir, behavior: reduceMotion ? "auto" : "smooth" });
+});
+
+/* ---------- Gift banner ---------- */
+document.getElementById("giftAdd").onclick = e => { addToCart("taster", 0, 1); flash(e.currentTarget); };
+
+/* ---------- Filters (chips, menu, category tiles) ---------- */
+function setFilter(cat){
+  document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.cat === cat));
+  grid.querySelectorAll(".card").forEach(c => c.hidden = !(cat === "all" || c.dataset.cat === cat));
+}
+document.querySelectorAll(".chip").forEach(chip => chip.addEventListener("click", () => setFilter(chip.dataset.cat)));
+document.querySelectorAll("[data-filter]").forEach(a => a.addEventListener("click", () => setFilter(a.dataset.filter)));
+document.querySelectorAll('a[href^="#p-"]').forEach(a => a.addEventListener("click", () => setFilter("all")));
+
+/* ---------- Mobile menu ---------- */
+const menuBtn = document.getElementById("menuBtn"), nav = document.getElementById("mainNav");
+menuBtn.onclick = () => { const o = nav.classList.toggle("open"); menuBtn.setAttribute("aria-expanded", o); };
+nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => { nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded", false); }));
+
+/* ---------- Announcement bar ---------- */
+const notes = document.querySelectorAll(".announce p");
+let ni = 0;
+if (!reduceMotion) setInterval(() => { notes[ni].classList.remove("on"); ni = (ni + 1) % notes.length; notes[ni].classList.add("on"); }, 4000);
+
+/* ---------- Hero slider (one slide per product) ---------- */
+const THEMES = ["s1", "s2", "s3"];
+const slidesBox = document.getElementById("slides");
+PRODUCTS.forEach((p, i) => {
+  const theme = THEMES[i % THEMES.length];
+  const from = Math.min(...p.sizes.map(x => x[1]));
+  const el = document.createElement("div");
+  el.className = "slide " + theme;
+  el.setAttribute("role", "group");
+  el.setAttribute("aria-roledescription", "slide");
+  el.setAttribute("aria-label", `${i + 1} of ${PRODUCTS.length}`);
+  el.innerHTML = `
+    <div class="txt">
+      <p class="kicker">${p.kicker || ""}</p>
+      <h2>${p.name}</h2>
+      <p class="sub">${p.desc}</p>
+      <p class="from">${p.sizes.length > 1 ? "From " : ""}<b>${rupee(from)}</b></p>
+      <a class="btn ${theme === "s1" ? "btn-maroon" : "btn-gold"}" href="#p-${p.id}">Shop now</a>
+    </div>
+    <div class="pic ${p.fit === "contain" ? "white" : ""}"><img src="${p.img}" alt="${p.name}" ${i ? 'loading="lazy"' : ""}></div>`;
+  el.querySelector("a").addEventListener("click", () => setFilter("all"));
+  slidesBox.appendChild(el);
+});
+const slidesEl = document.getElementById("slides"), slideEls = slidesEl.children, dotsEl = document.getElementById("dots");
+let cur = 0, timer;
+for (let i = 0; i < slideEls.length; i++){
+  const d = document.createElement("button");
+  d.setAttribute("aria-label", "Go to slide " + (i + 1));
+  d.onclick = () => { go(i); restart(); };
+  dotsEl.appendChild(d);
+}
+function go(i){
+  cur = (i + slideEls.length) % slideEls.length;
+  slidesEl.style.transform = `translateX(-${cur * 100}%)`;
+  [...dotsEl.children].forEach((d, j) => d.setAttribute("aria-current", j === cur));
+  [...slideEls].forEach((s, j) => s.setAttribute("aria-hidden", j !== cur));
+}
+function restart(){ clearInterval(timer); if (!reduceMotion) timer = setInterval(() => go(cur + 1), 5500); }
+document.getElementById("slPrev").onclick = () => { go(cur - 1); restart(); };
+document.getElementById("slNext").onclick = () => { go(cur + 1); restart(); };
+const sliderEl = document.querySelector(".slider");
+sliderEl.addEventListener("mouseenter", () => clearInterval(timer));
+sliderEl.addEventListener("mouseleave", restart);
+let tx = null;
+sliderEl.addEventListener("touchstart", e => tx = e.touches[0].clientX, { passive:true });
+sliderEl.addEventListener("touchend", e => { if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50){ go(cur + (dx < 0 ? 1 : -1)); restart(); } tx = null; });
+go(0); restart();
+
+/* ---------- Cart ---------- */
+const drawer = document.getElementById("drawer"), scrim = document.getElementById("scrim");
+const itemsEl = document.getElementById("items"), countEl = document.getElementById("cartCount");
+const totalEl = document.getElementById("total"), topTotal = document.getElementById("cartTotalTop");
+const sendBtn = document.getElementById("sendOrder"), cartBtn = document.getElementById("cartBtn");
+
+function addToCart(id, s, q){
+  const line = cart.find(l => l.id === id && l.s === s);
+  if (line) line.q = Math.min(99, line.q + q); else cart.push({ id, s, q });
+  save(); renderCart();
+  cartBtn.classList.remove("bump"); void cartBtn.offsetWidth; cartBtn.classList.add("bump");
+}
+const cartTotal = () => cart.reduce((t, l) => t + byId(l.id).sizes[l.s][1] * l.q, 0);
+
+function renderCart(){
+  countEl.textContent = cart.reduce((n, l) => n + l.q, 0);
+  totalEl.textContent = topTotal.textContent = rupee(cartTotal());
+  sendBtn.disabled = cart.length === 0;
+  if (!cart.length){ itemsEl.innerHTML = `<p class="empty">Your cart is empty.<br>Add products to place an order.</p>`; return; }
+  itemsEl.innerHTML = "";
+  cart.forEach((l, i) => {
+    const p = byId(l.id), s = p.sizes[l.s];
+    const row = document.createElement("div");
+    row.className = "item";
+    row.innerHTML = `
+      <img src="${p.img}" alt="">
+      <div>
+        <b>${p.name}</b>
+        <span class="meta">${s[0]}, ${rupee(s[1])} each</span>
+        <div class="row" style="margin-top:6px">
+          <div class="qty">
+            <button type="button" class="minus" aria-label="Decrease quantity">−</button>
+            <input type="number" min="1" max="99" value="${l.q}" inputmode="numeric" aria-label="Quantity">
+            <button type="button" class="plus" aria-label="Increase quantity">+</button>
+          </div>
+          <button type="button" class="rm">Remove</button>
+        </div>
+      </div>
+      <div class="line">${rupee(s[1] * l.q)}</div>`;
+    const inp = row.querySelector("input");
+    row.querySelector(".minus").onclick = () => { l.q = clampQty(l.q - 1); save(); renderCart(); };
+    row.querySelector(".plus").onclick = () => { l.q = clampQty(l.q + 1); save(); renderCart(); };
+    inp.onchange = () => { l.q = clampQty(inp.value); save(); renderCart(); };
+    row.querySelector(".rm").onclick = () => { cart.splice(i, 1); save(); renderCart(); };
+    itemsEl.appendChild(row);
+  });
+}
+
+function openCart(){ drawer.classList.add("open"); scrim.classList.add("open"); drawer.setAttribute("aria-hidden","false"); document.getElementById("closeCart").focus(); }
+function closeCart(){ drawer.classList.remove("open"); scrim.classList.remove("open"); drawer.setAttribute("aria-hidden","true"); cartBtn.focus(); }
+cartBtn.onclick = openCart;
+document.getElementById("closeCart").onclick = closeCart;
+scrim.onclick = closeCart;
+document.addEventListener("keydown", e => { if (e.key === "Escape" && drawer.classList.contains("open")) closeCart(); });
+
+sendBtn.onclick = () => {
+  if (!cart.length) return;
+  const name = document.getElementById("custName").value.trim();
+  const addr = document.getElementById("custAddr").value.trim();
+  let msg = "Hello Theeshvaan Traders, I’d like to order:\n\n";
+  cart.forEach((l, i) => {
+    const p = byId(l.id), s = p.sizes[l.s];
+    msg += `${i + 1}. ${p.name} (${s[0]}) × ${l.q} = ${rupee(s[1] * l.q)}\n`;
+  });
+  msg += `\nTotal: ${rupee(cartTotal())}`;
+  if (name) msg += `\nName: ${name}`;
+  if (addr) msg += `\nAddress: ${addr}`;
+  window.open(waLink(msg), "_blank", "noopener");
+};
+
+
+/* ---------- Flying bees ---------- */
+(function(){
+  if (reduceMotion) return;
+  const layer = document.getElementById("bees"), tpl = document.getElementById("beeTpl");
+  const count = window.innerWidth < 700 ? 2 : 4;   // change the number of bees here
+  let W = innerWidth, H = innerHeight;
+  addEventListener("resize", () => { W = innerWidth; H = innerHeight; });
+  const rand = (a, b) => a + Math.random() * (b - a);
+  const bees = [];
+  for (let i = 0; i < count; i++){
+    const el = document.createElement("div");
+    el.className = "bee";
+    el.appendChild(tpl.content.cloneNode(true));
+    const size = rand(22, 32);
+    el.style.width = size + "px"; el.style.height = size * .85 + "px";
+    layer.appendChild(el);
+    bees.push({ el, x:rand(0, W), y:rand(0, H), vx:0, vy:0, tx:rand(0, W), ty:rand(0, H),
+                speed:rand(50, 90), phase:rand(0, 6.28), face:1, pause:0 });
+  }
+  let last = performance.now(), running = true;
+  document.addEventListener("visibilitychange", () => { running = !document.hidden; last = performance.now(); if (running) requestAnimationFrame(tick); });
+  function tick(now){
+    if (!running) return;
+    const dt = Math.min(.05, (now - last) / 1000); last = now;
+    bees.forEach(b => {
+      if (b.pause > 0){ b.pause -= dt; }                        // hover in place for a moment
+      const dx = b.tx - b.x, dy = b.ty - b.y, d = Math.hypot(dx, dy);
+      if (d < 30){                                                // reached target: pick a new one
+        b.tx = rand(20, W - 50); b.ty = rand(20, H - 50);
+        if (Math.random() < .3) b.pause = rand(.6, 1.6);
+      }
+      const sp = b.pause > 0 ? 8 : b.speed;
+      b.vx += ((dx / (d || 1)) * sp - b.vx) * dt * 1.6;
+      b.vy += ((dy / (d || 1)) * sp - b.vy) * dt * 1.6;
+      b.phase += dt * 5;
+      b.x += b.vx * dt + Math.cos(b.phase * .7) * .6;
+      b.y += b.vy * dt + Math.sin(b.phase) * 1.1;              // little up-and-down wobble
+      if (Math.abs(b.vx) > 4) b.face = b.vx > 0 ? 1 : -1;
+      const tilt = Math.max(-18, Math.min(18, b.vy * .25));
+      b.el.style.transform = `translate(${b.x}px,${b.y}px) scaleX(${b.face}) rotate(${tilt * b.face}deg)`;
+    });
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+
+
+/* ---------- FSSAI certificate ---------- */
+const certDlg = document.getElementById("certDlg");
+document.querySelectorAll("[data-cert]").forEach(b => b.addEventListener("click", e => {
+  e.preventDefault();
+  if (certDlg.showModal) certDlg.showModal(); else window.open("files/fssai-certificate.pdf", "_blank");
+}));
+document.getElementById("certClose").onclick = () => certDlg.close();
+certDlg.addEventListener("click", e => { if (e.target === certDlg) certDlg.close(); });
+if (location.hash === "#fssai" && certDlg.showModal) certDlg.showModal();
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+renderCart();
+</script>
+</body>
+</html>
