@@ -11,8 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --maroon:#7B1518; --maroon-deep:#4A0B0E; --gold:#C99A3B; --gold-soft:#E7C77A; --gold-pale:#F6E7C1;
-  --bg:#FFFCF5; --surface:#FFFFFF; --surface-2:#FBF1DC; --ink:#2B1A12; --muted:#6E5B4C; --line:#EADBBE;
+  --maroon:#2F5D3A; --maroon-deep:#1C3A26; --gold:#C99A3B; --gold-soft:#E7C77A; --gold-pale:#DCE8CC;
+  --bg:#F7F9F1; --surface:#FFFFFF; --surface-2:#EAF1DF; --ink:#1F2A1E; --muted:#5A6B57; --line:#D6E2C8;
   --on-dark:#FBF1DE; --wa:#1F8F4E;
   color-scheme: light;
   box-sizing:border-box;
@@ -21,13 +21,13 @@
 }
 @media (prefers-color-scheme: dark){
   :root{
-    --bg:#1A1110; --surface:#271A17; --surface-2:#31211C; --ink:#F6EBDD; --muted:#C5B19C; --line:#4A3329;
-    --gold:#DDB259; --gold-pale:#3A2A1E;
+    --bg:#0F1A12; --surface:#18261B; --surface-2:#1F3124; --ink:#EAF1E3; --muted:#AFC2A8; --line:#2F4A33;
+    --gold:#DDB259; --gold-pale:#2A3A24;
     color-scheme: dark;
   }
 }
 *,*::before,*::after{box-sizing:inherit}
-html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 160px)}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:17px;line-height:1.55}
 img{max-width:100%;display:block}
@@ -39,105 +39,119 @@ button,select,input,textarea{font:inherit;color:inherit}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
 /* ---------- Announcement bar ---------- */
-.announce{background:var(--maroon-deep);color:var(--gold-soft);font-size:14px;font-weight:600;text-align:center;height:36px;position:relative;overflow:hidden;letter-spacing:.02em}
+.announce{background:linear-gradient(90deg,#F2B85A,#FFE3A1 35%,#FCEFC4 50%,#FFE3A1 65%,#F2B85A);color:#1C3A26;font-size:14px;font-weight:700;text-align:center;height:36px;position:relative;overflow:hidden;letter-spacing:.02em}
 .announce p{margin:0;position:absolute;inset:0;display:grid;place-items:center;padding:0 12px;opacity:0;transition:opacity .5s}
 .announce p.on{opacity:1}
 .announce a{color:inherit;text-decoration:none}
 
-/* ---------- Header ---------- */
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surface);z-index:30}
-header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
-.bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:78px}
+/* ---------- Header (deep forest green so the gold logo shines) ---------- */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#1C3A26;z-index:30}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:radial-gradient(ellipse 50% 140% at 12% 0%,rgba(255,214,120,.28),transparent 60%),radial-gradient(ellipse 40% 120% at 88% 0%,rgba(255,226,150,.16),transparent 60%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%23F6D77A' stroke-opacity='.07' stroke-width='1.5'%3E%3Cpath d='M30 60c0-22 18-36 40-36 0 22-18 36-40 36z'/%3E%3Cpath d='M30 60L62 30'/%3E%3Cpath d='M110 140c0-18 14-30 32-30 0 18-14 30-32 30z'/%3E%3Cpath d='M110 140l26-24'/%3E%3Cpath d='M118 50c-14-4-22-16-20-30 14 4 22 16 20 30z'/%3E%3Cpath d='M118 50L100 22'/%3E%3Cpath d='M40 140c-6-12-2-26 10-32 6 12 2 26-10 32z'/%3E%3C/g%3E%3C/svg%3E"),radial-gradient(ellipse at 50% 0%,#3B6E45 0%,#24492F 45%,#1C3A26 100%);color:#FBF1DE;border-bottom:3px solid #E9B949;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:104px}
 .bar .left{display:flex;align-items:center;gap:14px}
 .bar .right{display:flex;justify-content:flex-end;align-items:center;gap:14px}
-.phone{font-weight:600;font-size:15px;text-decoration:none;color:var(--muted);display:flex;align-items:center;gap:6px}
-.phone svg{width:18px;height:18px;fill:var(--wa)}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo img{width:58px;height:58px}
-.logo .name{font-family:Marcellus,Georgia,serif;font-size:22px;letter-spacing:.06em;line-height:1;color:var(--maroon)}
-.logo .name small{display:block;font-family:"Source Sans 3",sans-serif;font-size:11.5px;letter-spacing:.18em;color:var(--gold);margin-top:5px}
-@media (prefers-color-scheme: dark){.logo .name{color:var(--gold-soft)}}
+.phone{font-weight:700;font-size:15px;text-decoration:none;color:#FBF1DE;display:flex;align-items:center;gap:8px}
+.phone svg{width:20px;height:20px;fill:#4FD18A}
+.phone:hover{color:#F6D77A}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.logo img{width:88px;height:88px;filter:drop-shadow(0 3px 8px rgba(0,0,0,.45))}
+.logo .name{font-family:Marcellus,Georgia,serif;font-size:27px;letter-spacing:.07em;line-height:1;color:#F6D77A}
+.logo .name small{display:block;font-family:"Source Sans 3",sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.2em;color:#E9B949;margin-top:7px}
 .icon-btn{background:none;border:0;cursor:pointer;width:44px;height:44px;border-radius:10px;display:grid;place-items:center;position:relative}
 .icon-btn:hover{background:var(--surface-2)}
+header .icon-btn{color:#FBF1DE}
+header .icon-btn:hover{background:rgba(255,255,255,.1)}
 .icon-btn svg{width:24px;height:24px}
-.badge{position:absolute;top:3px;right:1px;background:var(--maroon);color:#fff;font-size:11.5px;font-weight:700;min-width:19px;height:19px;border-radius:999px;display:grid;place-items:center;padding:0 5px}
-.cart-total{font-weight:700;font-size:15px}
+.badge{position:absolute;top:2px;right:0;background:#E9B949;color:#1C3A26;font-size:11.5px;font-weight:800;min-width:19px;height:19px;border-radius:999px;display:grid;place-items:center;padding:0 5px}
+.cart-total{font-weight:700;font-size:15px;color:#F6D77A}
 .bump{animation:bump .35s ease}
 @keyframes bump{50%{transform:scale(1.15)}}
 .menu-btn{display:none}
-nav.main{border-top:1px solid var(--line)}
+nav.main{border-top:1px solid rgba(233,185,73,.35)}
 nav.main ul{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:4px;flex-wrap:wrap}
-nav.main a{display:block;padding:12px 16px;text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
-nav.main a:hover{color:var(--maroon)}
-@media (prefers-color-scheme: dark){nav.main a:hover{color:var(--gold-soft)}}
+nav.main a{display:block;padding:12px 16px;text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#FBF1DE}
+nav.main a:hover{color:#F6D77A}
 @media (max-width:860px){
   .phone span,.cart-total{display:none}
   .menu-btn{display:grid}
-  .logo img{width:46px;height:46px}
-  .logo .name{font-size:17px}
+  .logo img{width:64px;height:64px}
+  .logo .name{font-size:19px}
   .logo .name small{display:none}
-  .bar{height:66px}
+  .bar{height:80px}
   nav.main{display:none}
   nav.main.open{display:block}
   nav.main ul{flex-direction:column;padding:6px 0 10px}
   nav.main a{padding:12px 20px}
 }
-@media (max-width:400px){.logo{gap:8px}.logo img{width:40px;height:40px}.logo .name{font-size:15px}.phone{display:none}.announce{font-size:13px}}
+@media (max-width:400px){.logo{gap:8px}.logo img{width:58px;height:58px}.logo .name{font-size:16px}.phone{display:none}.announce{font-size:13px}}
 
-/* ---------- Hero slider ---------- */
-.slider{position:relative;overflow:hidden}
-.slides{display:flex;transition:transform .6s ease}
-.slide{flex:0 0 100%;min-height:480px;display:grid;grid-template-columns:1fr 1fr;align-items:center}
-.slide .txt{padding:48px 40px 48px max(20px, calc((100vw - 1240px)/2 + 20px))}
-.slide .kicker{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0 0 12px}
-.slide h2{font-size:clamp(34px,4.6vw,58px);margin-bottom:14px}
-.slide p.sub{font-size:18px;max-width:30em;margin:0 0 26px}
-.slide .pic{height:100%;min-height:480px;position:relative}
-.slide .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.s1{background:#F7ECD6;color:#2B1A12}
-.slide p.from{margin:-12px 0 22px;font-size:17px}
-.slide p.from b{font-family:Marcellus,Georgia,serif;font-size:30px;font-weight:400;margin-left:4px}
-.s1 p.from b{color:#7B1518}.s2 p.from b,.s3 p.from b{color:#E7C77A}
-.slide .pic.white{background:#FEFEFE}
-.slide .pic.white img{object-fit:contain;padding:24px 0}
-.s1 .kicker{color:#7B1518}
-.s2{background:linear-gradient(120deg,#5A0D11,#7B1518);color:#FBF1DE}
-.s2 .kicker{color:#E7C77A}
-.s3{background:#2E1B12;color:#FBF1DE}
-.s3 .kicker{color:#E7C77A}
+/* ---------- Hero banner slider ---------- */
+.slider{position:relative;overflow:hidden;background:#12261A}
+.slides{display:flex;transition:transform .7s cubic-bezier(.65,0,.35,1)}
+.slide{flex:0 0 100%;position:relative;min-height:540px;display:flex;align-items:center;overflow:hidden}
+.slide .bg{position:absolute;inset:-40px;background-size:cover;background-position:center;filter:blur(22px) brightness(.42) saturate(1.2)}
+.slide.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,38,26,.7) 0%,rgba(18,38,26,.15) 60%,rgba(18,38,26,0) 100%)}
+.slide.studio .bg{inset:0;filter:none;background:radial-gradient(ellipse at 75% 50%,#F3E2A0 0%,#EEF2DF 35%,#F7F9F1 75%) !important}
+.slide .inner{position:relative;z-index:1;width:100%;max-width:1240px;margin:0 auto;padding:40px 84px;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.slide .kicker{font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin:0 0 14px;color:#F6D77A}
+.slide h2{font-size:clamp(36px,5vw,64px);margin-bottom:16px;color:#FFF7E8}
+.slide p.sub{font-size:18.5px;max-width:28em;margin:0 0 20px;color:#E4EBD6}
+.slide p.from{margin:0 0 26px;font-size:17px;color:#E4EBD6}
+.slide p.from b{font-family:Marcellus,Georgia,serif;font-size:32px;font-weight:400;margin-left:4px;color:#F6D77A}
+.slide .acts{display:flex;flex-wrap:wrap;gap:12px}
+.slide .pic{justify-self:center;width:min(100%,400px);aspect-ratio:4/5;border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.5);border:3px solid rgba(246,215,122,.6)}
+.slide .pic img{width:100%;height:100%;object-fit:cover}
+.slide.studio .kicker{color:#2F5D3A}
+.slide.studio h2{color:#1F2A1E}
+.slide.studio p.sub,.slide.studio p.from{color:#2F3D2C}
+.slide.studio p.from b{color:#2F5D3A}
+.slide.studio .pic{box-shadow:none;border:0;border-radius:0;aspect-ratio:auto;height:460px}
+.slide.studio .inner{z-index:auto}
+.slide.studio .pic{overflow:visible}
+.slide.studio .pic img{object-fit:contain;mix-blend-mode:multiply}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:8px;padding:13px 26px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:15px;letter-spacing:.06em;text-transform:uppercase}
-.btn-maroon{background:#7B1518;color:#fff}
-.btn-maroon:hover{background:#4A0B0E}
-.btn-gold{background:#C99A3B;color:#2B1A12}
-.btn-gold:hover{background:#E7C77A}
+.btn-maroon{background:#2F5D3A;color:#fff}
+.btn-maroon:hover{background:#1C3A26}
+.btn-gold{background:#E9B949;color:#1F2A1E}
+.btn-gold:hover{background:#F6D77A}
+.btn-line{background:transparent;color:#FFF7E8;box-shadow:inset 0 0 0 2px rgba(246,215,122,.75)}
+.btn-line:hover{background:rgba(255,255,255,.1)}
+.slide.studio .btn-line{color:#2F5D3A;box-shadow:inset 0 0 0 2px #2F5D3A}
+.slide.studio .btn-line:hover{background:rgba(47,93,58,.08)}
 .btn-wa{background:var(--wa);color:#fff;text-transform:none;letter-spacing:0;font-size:16px}
 .btn-wa:hover{background:#18763F}
-.sl-arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.85);color:#2B1A12;cursor:pointer;display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.sl-arrow{position:absolute;z-index:2;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:#1F2A1E;cursor:pointer;display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.25)}
 .sl-arrow:hover{background:#fff}
 .sl-arrow svg{width:22px;height:22px}
-.sl-prev{left:14px}.sl-next{right:14px}
-.dots{position:absolute;left:50%;transform:translateX(-50%);bottom:14px;display:flex;justify-content:center;gap:8px;background:rgba(30,12,8,.45);padding:7px 12px;border-radius:999px}
-.dots button{width:11px;height:11px;border-radius:50%;border:2px solid #C99A3B;background:transparent;padding:0;cursor:pointer}
-.dots button[aria-current="true"]{background:#C99A3B}
-@media (max-width:760px){
-  .slide{grid-template-columns:1fr;min-height:0}
-  .slide .pic{order:-1;min-height:0;height:300px}
-  .slide .txt{padding:26px 22px 52px;text-align:center}
+.sl-prev{left:18px}.sl-next{right:18px}
+.dots{position:absolute;z-index:2;left:50%;transform:translateX(-50%);bottom:16px;display:flex;justify-content:center;gap:8px;background:rgba(10,26,16,.45);padding:7px 12px;border-radius:999px}
+.dots button{width:10px;height:10px;border-radius:50%;border:2px solid #E9B949;background:transparent;padding:0;cursor:pointer;transition:width .3s}
+.dots button[aria-current="true"]{background:#E9B949;width:26px;border-radius:999px}
+@media (max-width:860px){
+  .slide{min-height:0}
+  .slide .inner{grid-template-columns:1fr;padding:22px 20px 60px;gap:18px;text-align:center}
+  .slide .pic{order:-1;width:min(62%,250px)}
+  .slide.studio .pic{height:280px;width:auto}
   .slide p.sub{margin-left:auto;margin-right:auto;font-size:16.5px}
-  .sl-arrow{top:150px;width:40px;height:40px}
+  .slide.photo::after{background:linear-gradient(0deg,rgba(18,38,26,.6),rgba(18,38,26,.1))}
+  .slide .acts{justify-content:center}
+  .sl-arrow{top:170px;width:40px;height:40px}
+  .sl-prev{left:10px}.sl-next{right:10px}
 }
 
-/* ---------- Trust strip ---------- */
-.trust{background:var(--surface-2);border-bottom:1px solid var(--line)}
-.trust ul{list-style:none;margin:0 auto;padding:18px 20px;display:grid;grid-template-columns:repeat(5,auto);justify-content:space-between;gap:14px}
-.cert-link{background:none;border:0;padding:0;cursor:pointer;display:grid;grid-template-columns:auto auto;column-gap:12px;align-items:center;text-align:left;font-weight:600;font-size:15px}
-.cert-link svg{grid-row:span 2}
-.cert-link small{font-size:13px;color:var(--maroon);text-decoration:underline;font-weight:700}
-@media (prefers-color-scheme: dark){.cert-link small{color:var(--gold-soft)}}
-.trust li{display:flex;align-items:center;gap:12px;justify-content:center;font-weight:600;font-size:15px}
-.trust svg{width:34px;height:34px;flex:none;color:var(--maroon)}
-@media (prefers-color-scheme: dark){.trust svg{color:var(--gold)}}
-@media (max-width:1000px){.trust ul{grid-template-columns:1fr 1fr;justify-content:stretch}.trust li{justify-content:flex-start}.trust li:last-child{grid-column:span 2}}
+/* ---------- Promise icons ---------- */
+.promises{background:var(--surface-2)}
+.pgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:26px 18px;list-style:none;margin:0;padding:0;text-align:center}
+.pgrid li{display:flex;flex-direction:column;align-items:center;gap:12px;font-weight:700;font-size:15.5px;line-height:1.3}
+.picon{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;background:var(--surface);border:2px solid var(--gold);box-shadow:0 0 0 6px var(--gold-pale);color:var(--maroon);transition:transform .25s}
+.pgrid li:hover .picon{transform:translateY(-4px)}
+.picon svg{width:40px;height:40px}
+@media (prefers-color-scheme: dark){.picon{color:var(--gold-soft)}}
+.pgrid .cert-link{background:none;border:0;padding:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:12px;font:inherit;font-weight:700;color:inherit}
+.pgrid .cert-link small{font-size:13px;color:var(--maroon);text-decoration:underline}
+@media (prefers-color-scheme: dark){.pgrid .cert-link small{color:var(--gold-soft)}}
+@media (max-width:1000px){.pgrid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:520px){.pgrid{grid-template-columns:1fr 1fr}.picon{width:72px;height:72px}.picon svg{width:34px;height:34px}}
 
 /* ---------- Section headings ---------- */
 section{padding:64px 0}
@@ -159,16 +173,32 @@ section{padding:64px 0}
 .story .points svg{width:22px;height:22px;flex:none;color:var(--gold);margin-top:1px}
 @media (max-width:860px){.story .wrap{grid-template-columns:1fr;gap:30px}.story .photo{aspect-ratio:1;width:min(100%,420px)}}
 
-/* ---------- Categories ---------- */
-.cats{background:var(--surface-2)}
-.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
-.cat{background:none;border:0;cursor:pointer;text-align:center;padding:0;text-decoration:none;color:inherit}
-.cat .ring{aspect-ratio:1;border-radius:50%;padding:6px;background:linear-gradient(135deg,#E7C77A,#C99A3B 50%,#8A6420);transition:transform .25s}
-.cat:hover .ring{transform:translateY(-4px)}
-.cat .ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:#fff}
-.cat h3{margin-top:16px;font-size:21px;letter-spacing:.04em}
-.cat span{display:block;color:var(--muted);font-size:14.5px;margin-top:4px}
-@media (max-width:760px){.cat-grid{grid-template-columns:1fr 1fr;gap:22px 16px}.cat h3{font-size:18px}}
+/* ---------- Collections ---------- */
+.col-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.col{position:relative;display:block;aspect-ratio:3/4;border-radius:16px;overflow:hidden;text-decoration:none;color:#fff;background:#12261A}
+.col img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.col.studio img{object-fit:contain;background:#fff;padding:12px}
+.col:hover img{transform:scale(1.06)}
+.col::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(18,38,26,.88) 0%,rgba(18,38,26,.25) 45%,rgba(18,38,26,0) 70%)}
+.col .lab{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:18px 18px 20px}
+.col h3{font-size:24px;color:#FFF7E8}
+.col span{display:block;font-size:14px;color:#E4EBD6;margin-top:4px}
+.col em{display:inline-block;margin-top:10px;font-style:normal;font-weight:700;font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:#F6D77A}
+@media (max-width:860px){.col-grid{grid-template-columns:1fr 1fr;gap:14px}.col h3{font-size:19px}.col span{display:none}}
+
+/* ---------- Our process ---------- */
+.process{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%23F6D77A' stroke-opacity='.07' stroke-width='1.5'%3E%3Cpath d='M30 60c0-22 18-36 40-36 0 22-18 36-40 36z'/%3E%3Cpath d='M30 60L62 30'/%3E%3Cpath d='M110 140c0-18 14-30 32-30 0 18-14 30-32 30z'/%3E%3Cpath d='M110 140l26-24'/%3E%3Cpath d='M118 50c-14-4-22-16-20-30 14 4 22 16 20 30z'/%3E%3Cpath d='M118 50L100 22'/%3E%3Cpath d='M40 140c-6-12-2-26 10-32 6 12 2 26-10 32z'/%3E%3C/g%3E%3C/svg%3E"),linear-gradient(180deg,#1F4129 0%,#173322 70%,#12261A 100%);color:#FBF1DE}
+.process .head h2{color:#F6D77A}
+.process .head p{color:#D5E0C6}
+.steps4{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+.steps4::before{content:"";position:absolute;top:62px;left:12%;right:12%;border-top:2px dashed rgba(246,215,122,.45)}
+.steps4 li{text-align:center;position:relative}
+.sicon{width:124px;height:124px;margin:0 auto 18px;border-radius:50%;background:#FBF1DE;display:grid;place-items:center;box-shadow:0 0 0 8px rgba(246,215,122,.25);color:#2F5D3A}
+.sicon svg{width:62px;height:62px}
+.steps4 small{display:block;font-weight:700;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:#E9B949;margin-bottom:6px}
+.steps4 h3{font-size:22px;margin-bottom:8px;color:#FFF7E8}
+.steps4 p{margin:0 auto;max-width:17em;color:#D5E0C6;font-size:15.5px}
+@media (max-width:860px){.steps4{grid-template-columns:1fr 1fr;gap:34px 18px}.steps4::before{display:none}.sicon{width:100px;height:100px}.sicon svg{width:50px;height:50px}}
 
 /* ---------- Product cards ---------- */
 .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;position:relative}
@@ -195,7 +225,7 @@ section{padding:64px 0}
 .qty input::-webkit-outer-spin-button,.qty input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
 .add{flex:1;min-width:0;padding:0 8px;height:44px;background:var(--maroon);color:#fff;border:0;border-radius:8px;font-weight:700;cursor:pointer;white-space:nowrap;font-size:15px}
 .add:hover{background:var(--maroon-deep)}
-.add.done{background:#2E6B3A}
+.add.done{background:#B8862B}
 .quick{font-size:14px;font-weight:600;color:#1C7F45;text-decoration:none;align-self:center}
 .quick:hover{text-decoration:underline}
 @media (prefers-color-scheme: dark){.quick{color:#5FD08E}}
@@ -212,14 +242,14 @@ section{padding:64px 0}
 @media (max-width:560px){.rail{grid-auto-columns:80%}.rail-btn{display:none}}
 
 /* Gift banner */
-.gift{padding:0}
-.gift-box{display:grid;grid-template-columns:1fr 1.1fr;border-radius:18px;overflow:hidden;background:linear-gradient(120deg,#4A0B0E,#7B1518);color:#FBF1DE}
+.gift{padding:64px 0 0}
+.gift-box{display:grid;grid-template-columns:1fr 1.1fr;border-radius:18px;overflow:hidden;background:linear-gradient(120deg,#1C3A26,#2F5D3A);color:#FBF1DE}
 .gift-box .pic{min-height:380px;position:relative}
 .gift-box .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 62%}
 .gift-box .txt{padding:44px 44px;display:flex;flex-direction:column;justify-content:center;gap:14px}
 .gift-box .kicker{color:#E7C77A;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0}
 .gift-box h2{font-size:clamp(28px,3.4vw,42px)}
-.gift-box p{margin:0;font-size:17.5px;color:#F3DFC2}
+.gift-box p{margin:0;font-size:17.5px;color:#E4EBD6}
 .gift-box .jars{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 6px}
 .gift-box .jars span{border:1px solid rgba(231,199,122,.55);border-radius:999px;padding:5px 12px;font-size:14px;font-weight:600}
 .gift-box .buy{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
@@ -244,18 +274,18 @@ section{padding:64px 0}
 @media (max-width:480px){.steps{grid-template-columns:1fr}}
 
 /* Footer */
-footer{background:#2A120F;color:#EADCC8;padding:56px 0 calc(28px + env(safe-area-inset-bottom,0px))}
+footer{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%23F6D77A' stroke-opacity='.07' stroke-width='1.5'%3E%3Cpath d='M30 60c0-22 18-36 40-36 0 22-18 36-40 36z'/%3E%3Cpath d='M30 60L62 30'/%3E%3Cpath d='M110 140c0-18 14-30 32-30 0 18-14 30-32 30z'/%3E%3Cpath d='M110 140l26-24'/%3E%3Cpath d='M118 50c-14-4-22-16-20-30 14 4 22 16 20 30z'/%3E%3Cpath d='M118 50L100 22'/%3E%3Cpath d='M40 140c-6-12-2-26 10-32 6 12 2 26-10 32z'/%3E%3C/g%3E%3C/svg%3E") #12261A;color:#DDE6CF;padding:56px 0 calc(28px + env(safe-area-inset-bottom,0px))}
 .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px}
 footer h4{font-family:Marcellus,serif;font-weight:400;font-size:18px;letter-spacing:.08em;text-transform:uppercase;color:#E7C77A;margin:0 0 14px}
 footer ul{list-style:none;margin:0;padding:0}
 footer li{margin:0 0 8px}
-footer a{text-decoration:none;color:#EADCC8}
+footer a{text-decoration:none;color:#DDE6CF}
 footer a:hover{color:#E7C77A}
 footer p{margin:0 0 8px}
 .fbrand img{width:96px;height:96px;margin-bottom:14px}
 .fbrand img.fssai{width:198px;height:auto;margin:0;border-radius:8px}
 .fssai-btn{background:none;border:0;padding:0;margin-top:16px;cursor:pointer;display:flex;flex-direction:column;gap:8px;align-items:flex-start;color:#E7C77A;font-weight:700;font-size:14.5px;text-decoration:underline}
-.fbottom{border-top:1px solid rgba(231,199,122,.25);margin-top:40px;padding-top:20px;font-size:14px;color:#BFA98F;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-bottom:60px}
+.fbottom{border-top:1px solid rgba(231,199,122,.25);margin-top:40px;padding-top:20px;font-size:14px;color:#A9B99E;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-bottom:60px}
 @media (max-width:860px){.fgrid{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.fgrid{grid-template-columns:1fr}}
 
@@ -277,7 +307,7 @@ footer p{margin:0 0 8px}
 /* FSSAI certificate dialog */
 dialog.cert{width:min(720px,94vw);max-height:90vh;padding:0;border:0;border-radius:14px;background:var(--bg);color:var(--ink);display:none;flex-direction:column}
 dialog.cert[open]{display:flex}
-dialog.cert::backdrop{background:rgba(20,8,6,.6)}
+dialog.cert::backdrop{background:rgba(10,22,14,.6)}
 .cert-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
 .cert-head h2{font-size:21px}
 .cert-body{overflow:auto;padding:18px}
@@ -289,8 +319,56 @@ dialog.cert::backdrop{background:rgba(20,8,6,.6)}
 .cert-foot{padding:14px 18px;border-top:1px solid var(--line);display:flex;justify-content:flex-end}
 @media (max-width:560px){.cert-facts{grid-template-columns:1fr}}
 
+
+/* ================= Morning forest atmosphere ================= */
+:root{--sky-top:#FFF6DF; --sky-mid:#F6F9EC; --sky-low:#EDF4E3}
+@media (prefers-color-scheme: dark){:root{--sky-top:#1E2717; --sky-mid:#122017; --sky-low:#0F1A12}}
+body{background:linear-gradient(180deg,var(--sky-top) 0px,var(--sky-mid) 1100px,var(--sky-low) 100%)}
+
+/* Sunlight over the banner */
+.sunlight{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;transition:opacity .8s}
+.slider.is-studio .sunlight{opacity:.4}
+.sunlight .sun{position:absolute;top:-38vmax;right:-18vmax;width:80vmax;height:80vmax;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,240,190,.85) 0%,rgba(255,218,130,.42) 18%,rgba(255,206,110,.12) 38%,rgba(255,200,100,0) 60%);
+  mix-blend-mode:screen;animation:sunBreathe 9s ease-in-out infinite alternate}
+.sunlight .rays{position:absolute;inset:-10% -10% -10% 0;transform-origin:100% 0;
+  background:repeating-conic-gradient(from 198deg at 100% 0%,rgba(255,236,180,0) 0deg 5deg,rgba(255,236,180,.20) 7deg 9deg,rgba(255,236,180,0) 11deg 17deg);
+  -webkit-mask-image:radial-gradient(ellipse 85% 95% at 100% 0%,#000 0%,rgba(0,0,0,.55) 45%,transparent 80%);
+          mask-image:radial-gradient(ellipse 85% 95% at 100% 0%,#000 0%,rgba(0,0,0,.55) 45%,transparent 80%);
+  mix-blend-mode:screen;animation:raySway 16s ease-in-out infinite alternate}
+.sunlight .mist{position:absolute;left:-10%;right:-10%;bottom:-6%;height:34%;
+  background:radial-gradient(ellipse 40% 60% at 25% 70%,rgba(255,255,255,.28),transparent 70%),radial-gradient(ellipse 45% 55% at 75% 80%,rgba(255,255,255,.22),transparent 70%);
+  filter:blur(8px);animation:mistDrift 22s ease-in-out infinite alternate}
+.mote{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(255,246,210,1) 0%,rgba(255,226,140,.6) 45%,rgba(255,226,140,0) 70%);opacity:0;animation:moteFloat linear infinite}
+@keyframes sunBreathe{from{transform:scale(1);opacity:.85}to{transform:scale(1.08);opacity:1}}
+@keyframes raySway{from{transform:rotate(-2.5deg)}to{transform:rotate(2.5deg)}}
+@keyframes mistDrift{from{transform:translateX(-4%)}to{transform:translateX(4%)}}
+@keyframes moteFloat{0%{opacity:0;transform:translate(0,0)}15%{opacity:.9}85%{opacity:.7}100%{opacity:0;transform:translate(var(--dx),-240px)}}
+@media (prefers-reduced-motion: reduce){.mote{display:none}}
+
+/* Dappled morning light on soft sections */
+.promises,.how{background:
+  radial-gradient(circle at 12% 18%,rgba(255,224,140,.38),transparent 28%),
+  radial-gradient(circle at 86% 30%,rgba(255,232,160,.30),transparent 30%),
+  radial-gradient(circle at 60% 95%,rgba(255,224,140,.22),transparent 32%),
+  var(--surface-2)}
+@media (prefers-color-scheme: dark){.promises,.how{background:radial-gradient(circle at 12% 18%,rgba(255,214,120,.08),transparent 30%),var(--surface-2)}}
+
+/* Forest treelines rising into dark sections */
+.process,footer{position:relative}
+.trees{position:absolute;left:0;bottom:calc(100% - 1px);width:100%;height:clamp(54px,8vw,110px);display:block;pointer-events:none}
+.process{margin-top:clamp(54px,8vw,110px);background-color:#1F4129}
+.how{padding-bottom:calc(64px + clamp(54px,8vw,110px))}
+
+/* Gentle reveal while scrolling */
+html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+html.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){html.js .reveal{opacity:1;transform:none}}
+
+.orn{height:18px}
+
 /* Cart drawer */
-.scrim{position:fixed;inset:0;background:rgba(20,8,6,.55);opacity:0;pointer-events:none;transition:opacity .25s;z-index:40}
+.scrim{position:fixed;inset:0;background:rgba(10,22,14,.55);opacity:0;pointer-events:none;transition:opacity .25s;z-index:40}
 .scrim.open{opacity:1;pointer-events:auto}
 .drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--bg);z-index:41;transform:translateX(100%);visibility:hidden;transition:transform .3s ease,visibility 0s .3s;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 .drawer.open{transform:none;visibility:visible;transition:transform .3s ease}
@@ -318,7 +396,8 @@ dialog.cert::backdrop{background:rgba(20,8,6,.6)}
 
 <!-- Announcement bar -->
 <div class="announce" aria-live="polite">
-  <p class="on"><a href="https://wa.me/919445414282" target="_blank" rel="noopener">Order on WhatsApp: +91 94454 14282</a></p>
+  <p class="on" id="greet">Good morning ☀ Start your day with pure raw honey</p>
+  <p><a href="https://wa.me/919445414282" target="_blank" rel="noopener">Order on WhatsApp: +91 94454 14282</a></p>
   <p><a href="#gift">Honey Taster Pack – 4 honeys for ₹350</a></p>
   <p>Raw, unprocessed honey since 2018</p>
 </div>
@@ -336,7 +415,7 @@ dialog.cert::backdrop{background:rgba(20,8,6,.6)}
       </a>
     </div>
     <a class="logo" href="#top">
-      <img src="images/logo.png" alt="" width="58" height="58">
+      <img src="images/logo.png" alt="Theeshvaan Traders logo" width="88" height="88">
       <span class="name">THEESHVAAN<small>TRADERS · SINCE 2018</small></span>
     </a>
     <div class="right">
@@ -354,6 +433,7 @@ dialog.cert::backdrop{background:rgba(20,8,6,.6)}
       <li><a href="#shop" data-filter="blend">Honey blends</a></li>
       <li><a href="#shop" data-filter="pantry">Spices &amp; oils</a></li>
       <li><a href="#gift">Gifting</a></li>
+      <li><a href="#process">Our process</a></li>
       <li><a href="#story">Our story</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -367,69 +447,75 @@ dialog.cert::backdrop{background:rgba(20,8,6,.6)}
     <div class="slides" id="slides"></div>
     <button class="sl-arrow sl-prev" id="slPrev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
     <button class="sl-arrow sl-next" id="slNext" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    <div class="sunlight" aria-hidden="true"><div class="sun"></div><div class="rays"></div><div class="mist"></div></div>
     <div class="dots" id="dots"></div>
   </div>
 
-  <!-- Trust strip -->
-  <div class="trust">
-    <ul class="wrap">
-      <li><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4l14 8v16l-14 8-14-8V12z"/><path d="M14 20l4 4 8-8"/></svg>100% pure &amp; natural</li>
-      <li><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6c-6 8-10 13-10 18a10 10 0 0 0 20 0c0-5-4-10-10-18z"/><path d="M8 8l24 24"/></svg>No added sugar</li>
-      <li><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 30c0-12 8-20 24-22-1 16-9 24-21 24"/><path d="M8 32l14-14"/></svg>Raw &amp; unprocessed</li>
-      <li><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="14"/><path d="M20 12v8l5 4"/></svg>Trusted since 2018</li>
-      <li><button type="button" class="cert-link" data-cert><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="5" width="24" height="30" rx="2"/><path d="M13 13h14M13 19h14M13 25h8"/><circle cx="28" cy="29" r="5" fill="var(--surface-2)"/><path d="M26 29l1.5 1.5L30.5 27.5"/></svg>FSSAI registered<small>View certificate</small></button></li>
-    </ul>
-  </div>
-
-  <!-- Story -->
-  <section class="story" id="story">
-    <div class="wrap">
-      <div class="photo"><img src="images/moringa-honey.jpg" alt="Moringa Honey jar on a kitchen table" loading="lazy"></div>
-      <div>
-        <div class="head">
-          <h2>How we bring you the best</h2>
-          <svg class="orn" viewBox="0 0 150 14" aria-hidden="true"><path d="M0 7h60M90 7h60" stroke="currentColor"/><path d="M75 1l6 6-6 6-6-6z" fill="currentColor"/></svg>
-        </div>
-        <p>Since 2018, Theeshvaan Traders has been bringing organic goodness to your plate. Our honey is naturally harvested from kombu, moringa, vaagai and wild forest flowers, and bottled raw, unfiltered and unprocessed.</p>
-        <p>Nothing is added and nothing is taken away, so each honey keeps the taste and colour of the flowers it comes from.</p>
-        <ul class="points">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg>Naturally harvested</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg>No preservatives</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg>Wood-pressed oil</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg>Handpicked spices</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Categories -->
-  <section class="cats">
+  <!-- Collections -->
+  <section class="collections" id="collections">
     <div class="wrap">
       <div class="head">
-        <h2>Shop by category</h2>
-        <svg class="orn" viewBox="0 0 150 14" aria-hidden="true"><path d="M0 7h60M90 7h60" stroke="currentColor"/><path d="M75 1l6 6-6 6-6-6z" fill="currentColor"/></svg>
+        <h2>Explore our collections</h2>
+        <svg class="orn" viewBox="0 0 150 18" aria-hidden="true"><path d="M0 11h56M94 11h56" stroke="currentColor"/><path d="M75 16c-1-6-6-10-13-10 1 6 6 10 13 10zM75 16c1-6 6-10 13-10-1 6-6 10-13 10z" fill="currentColor"/><path d="M75 17V3" stroke="currentColor" stroke-width="1.4"/></svg>
       </div>
-      <div class="cat-grid">
-        <a class="cat" href="#shop" data-filter="honey"><div class="ring"><img src="images/kombu-honey.jpg" alt="" loading="lazy"></div><h3>Raw Honey</h3><span>Kombu, Moringa, Vaagai, Wild Forest</span></a>
-        <a class="cat" href="#shop" data-filter="blend"><div class="ring"><img src="images/fig-with-honey.jpg" alt="" loading="lazy"></div><h3>Honey Blends</h3><span>Gulkand, Amla, Fig</span></a>
-        <a class="cat" href="#shop" data-filter="pantry"><div class="ring"><img src="images/black-pepper.jpg" alt="" loading="lazy"></div><h3>Spices &amp; Oils</h3><span>Black pepper, Coconut oil</span></a>
-        <a class="cat" href="#gift"><div class="ring"><img src="images/taster-pack.jpg" alt="" loading="lazy"></div><h3>Gifting</h3><span>Honey taster pack</span></a>
+      <div class="col-grid">
+        <a class="col" href="#shop" data-filter="honey"><img src="images/moringa-honey.jpg" alt="" loading="lazy"><div class="lab"><h3>Raw Honey</h3><span>Kombu, Moringa, Vaagai Poo, Wild Forest</span><em>Shop now →</em></div></a>
+        <a class="col" href="#shop" data-filter="blend"><img src="images/fig-with-honey.jpg" alt="" loading="lazy"><div class="lab"><h3>Honey Blends</h3><span>Rose Gulkand, Amla, Fig</span><em>Shop now →</em></div></a>
+        <a class="col" href="#shop" data-filter="pantry"><img src="images/black-pepper.jpg" alt="" loading="lazy"><div class="lab"><h3>Spices &amp; Oils</h3><span>Black pepper, Coconut oil</span><em>Shop now →</em></div></a>
+        <a class="col" href="#gift"><img src="images/taster-pack.jpg" alt="" loading="lazy"><div class="lab"><h3>Gift Boxes</h3><span>Honey Taster Pack</span><em>Shop now →</em></div></a>
       </div>
     </div>
   </section>
+
+  <!-- Promises -->
+  <section class="promises">
+    <div class="wrap">
+      <div class="head">
+        <h2>The Theeshvaan promise</h2>
+        <svg class="orn" viewBox="0 0 150 18" aria-hidden="true"><path d="M0 11h56M94 11h56" stroke="currentColor"/><path d="M75 16c-1-6-6-10-13-10 1 6 6 10 13 10zM75 16c1-6 6-10 13-10-1 6-6 10-13 10z" fill="currentColor"/><path d="M75 17V3" stroke="currentColor" stroke-width="1.4"/></svg>
+      </div>
+      <ul class="pgrid">
+        <li><span class="picon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6c-7 9-12 15-12 22a12 12 0 0 0 24 0c0-7-5-13-12-22z"/><path d="M18 30a6 6 0 0 0 6 6"/></svg></span>100% raw &amp; unprocessed</li>
+        <li><span class="picon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="11" y="16" width="26" height="22" rx="3"/><path d="M15 16v-4h18v4"/><path d="M9 9l30 30"/></svg></span>No added sugar or preservatives</li>
+        <li><span class="picon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 40V22"/><path d="M24 22c0-8 6-13 14-13 0 8-6 13-14 13z"/><path d="M24 28c0-6-5-10-11-10 0 6 5 10 11 10z"/></svg></span>Naturally harvested</li>
+        <li><span class="picon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 12h16l3 6v20a3 3 0 0 1-3 3H16a3 3 0 0 1-3-3V18z"/><path d="M13 18h22"/><path d="M19 26l4 4 7-7"/></svg></span>Packed fresh in glass jars</li>
+        <li><button type="button" class="cert-link" data-cert><span class="picon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="11" y="6" width="26" height="34" rx="2"/><path d="M17 15h14M17 21h14M17 27h8"/><circle cx="33" cy="35" r="7" fill="var(--surface)"/><path d="M30 35l2 2 4-4"/></svg></span>FSSAI registered<small>View certificate</small></button></li>
+        <li><span class="picon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="20" r="11"/><path d="M18 29l-3 12 9-5 9 5-3-12"/><path d="M24 14v6l4 3"/></svg></span>Trusted since 2018</li>
+      </ul>
+    </div>
+  </section>
+
 
   <!-- Bestsellers -->
   <section id="bestsellers">
     <div class="wrap">
       <div class="head">
         <h2>Our bestsellers</h2>
-        <svg class="orn" viewBox="0 0 150 14" aria-hidden="true"><path d="M0 7h60M90 7h60" stroke="currentColor"/><path d="M75 1l6 6-6 6-6-6z" fill="currentColor"/></svg>
+        <svg class="orn" viewBox="0 0 150 18" aria-hidden="true"><path d="M0 11h56M94 11h56" stroke="currentColor"/><path d="M75 16c-1-6-6-10-13-10 1 6 6 10 13 10zM75 16c1-6 6-10 13-10-1 6-6 10-13 10z" fill="currentColor"/><path d="M75 17V3" stroke="currentColor" stroke-width="1.4"/></svg>
       </div>
       <div class="rail-wrap">
         <button class="rail-btn rail-prev" data-dir="-1" aria-label="Scroll left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
         <div class="rail" id="rail"></div>
         <button class="rail-btn rail-next" data-dir="1" aria-label="Scroll right"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
       </div>
+    </div>
+  </section>
+
+  <!-- Our process -->
+  <section class="process" id="process">
+    <svg class="trees" viewBox="0 0 1200 110" preserveAspectRatio="none" aria-hidden="true"><path d="M0 110 L0 74 Q0 29 20 29 Q40 29 40 74 L33 81 L54 28 L75 81 L68 77 L91 16 L114 77 L104 67 Q104 15 118 15 Q133 15 133 67 L124 64 Q124 7 153 7 Q182 7 182 64 L173 92 L189 59 L204 92 L196 88 L212 47 L228 88 L222 76 L242 14 L262 76 L256 80 L277 24 L298 80 L289 63 Q289 5 318 5 Q347 5 347 63 L339 88 L357 47 L375 88 L365 78 Q365 38 391 38 Q416 38 416 78 L406 76 L434 13 L462 76 L448 76 Q448 34 476 34 Q503 34 503 76 L492 72 Q492 25 506 25 Q521 25 521 72 L514 79 Q514 42 528 42 Q543 42 543 79 L540 88 L554 46 L569 88 L561 83 Q561 50 587 50 Q612 50 612 83 L603 78 L619 20 L635 78 L630 84 L645 37 L660 84 L653 77 L682 16 L710 77 L706 78 Q706 38 722 38 Q738 38 738 78 L734 73 L748 6 L763 73 L756 86 L782 42 L807 86 L793 81 L807 28 L822 81 L817 76 Q817 35 836 35 Q855 35 855 76 L848 76 L871 12 L893 76 L881 77 L909 15 L936 77 L922 74 L947 8 L972 74 L969 81 L996 27 L1023 81 L1008 74 L1022 7 L1035 74 L1032 67 Q1032 15 1049 15 Q1066 15 1066 67 L1059 79 L1074 20 L1090 79 L1082 66 Q1082 13 1104 13 Q1126 13 1126 66 L1116 89 L1144 49 L1172 89 L1159 91 L1179 57 L1199 91 L1191 90 L1213 53 L1235 90 L1200 110 Z" fill="#3B6E45" fill-opacity="0.55"/><path d="M0 110 L0 83 Q0 51 15 51 Q29 51 29 83 L28 92 Q28 71 45 71 Q62 71 62 92 L57 90 L75 52 L93 90 L89 93 Q89 72 104 72 Q119 72 119 93 L113 81 Q113 47 130 47 Q147 47 147 81 L138 90 L160 53 L182 90 L176 95 L191 67 L206 95 L198 89 Q198 64 227 64 Q256 64 256 89 L245 80 Q245 44 268 44 Q290 44 290 80 L278 90 L300 54 L323 90 L310 92 L337 59 L364 92 L354 88 L371 47 L387 88 L378 99 L404 78 L430 99 L415 98 L440 77 L465 98 L451 90 L472 52 L492 90 L485 89 Q485 63 505 63 Q526 63 526 89 L515 93 Q515 72 535 72 Q556 72 556 93 L553 95 Q553 76 567 76 Q581 76 581 95 L577 83 Q577 51 590 51 Q604 51 604 83 L598 86 Q598 57 617 57 Q635 57 635 86 L627 94 Q627 74 645 74 Q662 74 662 94 L656 94 L673 65 L690 94 L683 91 L711 56 L740 91 L736 96 L755 71 L774 96 L764 93 Q764 72 780 72 Q796 72 796 93 L789 85 Q789 55 806 55 Q823 55 823 85 L815 90 Q815 66 840 66 Q865 66 865 90 L858 89 L886 49 L914 89 L909 90 Q909 65 928 65 Q946 65 946 90 L940 91 Q940 68 966 68 Q991 68 991 91 L984 86 L1001 41 L1017 86 L1010 99 L1027 77 L1045 99 L1040 96 L1055 71 L1071 96 L1066 88 L1085 47 L1104 88 L1096 98 L1116 76 L1136 98 L1125 94 Q1125 76 1150 76 Q1174 76 1174 94 L1162 90 L1186 53 L1209 90 L1200 110 Z" fill="#1F4129" fill-opacity="1"/></svg>
+    <div class="wrap">
+      <div class="head">
+        <h2>Our process</h2>
+        <svg class="orn" viewBox="0 0 150 18" aria-hidden="true"><path d="M0 11h56M94 11h56" stroke="currentColor"/><path d="M75 16c-1-6-6-10-13-10 1 6 6 10 13 10zM75 16c1-6 6-10 13-10-1 6-6 10-13 10z" fill="currentColor"/><path d="M75 17V3" stroke="currentColor" stroke-width="1.4"/></svg>
+        <p>How we bring the finest honey from the flowers to your plate.</p>
+      </div>
+      <ol class="steps4">
+        <li><span class="sicon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 26v14"/><circle cx="24" cy="18" r="5"/><path d="M24 13c0-4 3-7 7-7 0 4-3 7-7 7zM24 13c0-4-3-7-7-7 0 4 3 7 7 7zM29 18c4 0 7 3 7 7-4 0-7-3-7-7zM19 18c-4 0-7 3-7 7 4 0 7-3 7-7z"/><path d="M18 40h12"/></svg></span><small>Step 1</small><h3>From the flowers</h3><p>Bees gather nectar from kombu, moringa, vaagai and wild forest flowers.</p></li>
+        <li><span class="sicon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l10 6v12l-10 6-10-6V12z"/><path d="M14 24l-8 5v10l10 5 8-5"/><path d="M34 24l8 5v10l-10 5-8-5"/></svg></span><small>Step 2</small><h3>Natural harvest</h3><p>Honey is collected from the comb using traditional methods.</p></li>
+        <li><span class="sicon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 10h14v4l3 4v20a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V18l3-4z"/><path d="M14 22h20"/><path d="M24 27c-2 3-3 4-3 6a3 3 0 0 0 6 0c0-2-1-3-3-6z"/></svg></span><small>Step 3</small><h3>Kept raw</h3><p>Unfiltered and unprocessed, with nothing added, then sealed in glass jars.</p></li>
+        <li><span class="sicon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h24v18H4z"/><path d="M28 20h8l6 6v6H28"/><circle cx="12" cy="35" r="4"/><circle cx="34" cy="35" r="4"/></svg></span><small>Step 4</small><h3>To your door</h3><p>Order on WhatsApp and we deliver fresh to your home.</p></li>
+      </ol>
     </div>
   </section>
 
@@ -452,12 +538,33 @@ dialog.cert::backdrop{background:rgba(20,8,6,.6)}
     </div>
   </section>
 
+  <!-- Story -->
+  <section class="story" id="story">
+    <div class="wrap">
+      <div class="photo"><img src="images/vaagai-poo-honey.jpg" alt="Vaagai Poo Honey jar with vaagai flowers" loading="lazy"></div>
+      <div>
+        <div class="head">
+          <h2>Our story</h2>
+          <svg class="orn" viewBox="0 0 150 18" aria-hidden="true"><path d="M0 11h56M94 11h56" stroke="currentColor"/><path d="M75 16c-1-6-6-10-13-10 1 6 6 10 13 10zM75 16c1-6 6-10 13-10-1 6-6 10-13 10z" fill="currentColor"/><path d="M75 17V3" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+        <p>Since 2018, Theeshvaan Traders has been bringing organic goodness to your plate. Our honey is naturally harvested from kombu, moringa, vaagai and wild forest flowers, and bottled raw, unfiltered and unprocessed.</p>
+        <p>Nothing is added and nothing is taken away, so each honey keeps the taste and colour of the flowers it comes from.</p>
+        <ul class="points">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg>Naturally harvested</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg>No preservatives</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg>Wood-pressed oil</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg>Handpicked spices</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- All products -->
   <section id="shop">
     <div class="wrap">
       <div class="head">
         <h2>All products</h2>
-        <svg class="orn" viewBox="0 0 150 14" aria-hidden="true"><path d="M0 7h60M90 7h60" stroke="currentColor"/><path d="M75 1l6 6-6 6-6-6z" fill="currentColor"/></svg>
+        <svg class="orn" viewBox="0 0 150 18" aria-hidden="true"><path d="M0 11h56M94 11h56" stroke="currentColor"/><path d="M75 16c-1-6-6-10-13-10 1 6 6 10 13 10zM75 16c1-6 6-10 13-10-1 6-6 10-13 10z" fill="currentColor"/><path d="M75 17V3" stroke="currentColor" stroke-width="1.4"/></svg>
         <p>Choose a size, set the quantity and add to your cart.</p>
       </div>
       <div class="filters" role="group" aria-label="Filter products">
@@ -475,7 +582,7 @@ dialog.cert::backdrop{background:rgba(20,8,6,.6)}
     <div class="wrap">
       <div class="head">
         <h2>How to order</h2>
-        <svg class="orn" viewBox="0 0 150 14" aria-hidden="true"><path d="M0 7h60M90 7h60" stroke="currentColor"/><path d="M75 1l6 6-6 6-6-6z" fill="currentColor"/></svg>
+        <svg class="orn" viewBox="0 0 150 18" aria-hidden="true"><path d="M0 11h56M94 11h56" stroke="currentColor"/><path d="M75 16c-1-6-6-10-13-10 1 6 6 10 13 10zM75 16c1-6 6-10 13-10-1 6-6 10-13 10z" fill="currentColor"/><path d="M75 17V3" stroke="currentColor" stroke-width="1.4"/></svg>
       </div>
       <ol class="steps">
         <li><h3>Choose products</h3><p>Pick the size and quantity for each product.</p></li>
@@ -488,11 +595,12 @@ dialog.cert::backdrop{background:rgba(20,8,6,.6)}
 </main>
 
 <footer id="contact">
+  <svg class="trees" viewBox="0 0 1200 110" preserveAspectRatio="none" aria-hidden="true"><path d="M0 110 L0 64 Q0 8 28 8 Q56 8 56 64 L40 84 L63 37 L85 84 L73 84 L89 36 L105 84 L99 85 Q99 55 113 55 Q126 55 126 85 L121 78 L142 20 L163 78 L151 73 Q151 28 177 28 Q202 28 202 73 L195 79 Q195 40 223 40 Q252 40 252 79 L240 80 L262 24 L284 80 L272 70 Q272 21 292 21 Q313 21 313 70 L305 89 L329 50 L352 89 L342 89 L368 49 L394 89 L379 81 Q379 45 393 45 Q407 45 407 81 L404 85 L422 40 L441 85 L432 82 L458 30 L483 82 L469 70 Q469 21 495 21 Q521 21 521 70 L508 65 Q508 9 530 9 Q552 9 552 65 L549 74 L565 6 L580 74 L574 67 Q574 15 588 15 Q601 15 601 67 L599 74 L625 8 L651 74 L648 79 Q648 41 673 41 Q698 41 698 79 L688 91 L704 56 L720 91 L712 74 L740 8 L768 74 L753 89 L774 51 L796 89 L792 77 Q792 37 809 37 Q826 37 826 77 L819 65 Q819 11 838 11 Q856 11 856 65 L853 77 Q853 37 877 37 Q901 37 901 77 L897 88 L920 47 L943 88 L934 82 L960 29 L985 82 L980 80 L995 25 L1010 80 L1005 81 Q1005 46 1031 46 Q1058 46 1058 81 L1043 82 L1065 30 L1087 82 L1080 76 Q1080 35 1100 35 Q1121 35 1121 76 L1109 77 L1128 17 L1147 77 L1143 79 L1160 23 L1176 79 L1170 85 Q1170 56 1190 56 Q1209 56 1209 85 L1200 110 Z" fill="#2F5D3A" fill-opacity="0.55"/><path d="M0 110 L0 97 L25 73 L50 97 L42 82 Q42 48 56 48 Q70 48 70 82 L62 87 Q62 60 86 60 Q110 60 110 87 L107 89 Q107 64 136 64 Q165 64 165 89 L159 97 Q159 81 187 81 Q216 81 216 97 L202 86 Q202 56 217 56 Q232 56 232 86 L230 87 L249 46 L268 87 L266 92 L283 58 L301 92 L291 86 Q291 56 304 56 Q317 56 317 86 L315 89 Q315 63 341 63 Q368 63 368 89 L354 92 Q354 71 382 71 Q409 71 409 92 L398 92 L417 59 L437 92 L426 89 L448 51 L470 89 L461 82 Q461 48 480 48 Q499 48 499 82 L488 95 Q488 77 510 77 Q532 77 532 95 L529 91 L553 56 L578 91 L564 99 L581 78 L598 99 L596 79 Q596 42 614 42 Q633 42 633 79 L629 89 L657 51 L684 89 L674 100 L693 81 L713 100 L706 78 Q706 39 728 39 Q749 39 749 78 L745 86 Q745 56 766 56 Q786 56 786 86 L774 94 L788 63 L801 94 L796 98 L810 75 L824 98 L820 97 Q820 81 833 81 Q847 81 847 97 L842 86 L855 41 L868 86 L867 92 L890 58 L913 92 L900 93 L929 63 L957 93 L942 85 L965 39 L987 85 L983 87 Q983 59 1007 59 Q1031 59 1031 87 L1026 100 L1054 80 L1081 100 L1068 96 L1082 70 L1096 96 L1089 97 Q1089 82 1110 82 Q1131 82 1131 97 L1126 93 Q1126 73 1141 73 Q1156 73 1156 93 L1148 97 Q1148 80 1173 80 Q1197 80 1197 97 L1191 82 Q1191 47 1213 47 Q1234 47 1234 82 L1200 110 Z" fill="#12261A" fill-opacity="1"/></svg>
   <div class="wrap">
     <div class="fgrid">
       <div class="fbrand">
         <img src="images/logo.png" alt="Theeshvaan Traders logo" width="96" height="96" loading="lazy">
-        <p>Bringing organic goodness to your plate since 2018.</p>
+        <p>Bringing organic goodness to your plate since 2018. Raw, unprocessed honey from kombu, moringa, vaagai and wild forest flowers, traditional honey blends, black pepper and wood-pressed coconut oil.</p>
         <button type="button" class="fssai-btn" data-cert aria-label="View FSSAI registration certificate, Lic. No. 22426072000146"><img class="fssai" src="images/fssai.png" alt="" width="198" height="89" loading="lazy"><span>View FSSAI certificate</span></button>
       </div>
       <div>
@@ -509,6 +617,7 @@ dialog.cert::backdrop{background:rgba(20,8,6,.6)}
         <ul>
           <li><a href="#how">How to order</a></li>
           <li><a href="#fssai" data-cert>FSSAI certificate</a></li>
+          <li><a href="#process">Our process</a></li>
           <li><a href="#story">Our story</a></li>
         </ul>
       </div>
@@ -723,28 +832,34 @@ let ni = 0;
 if (!reduceMotion) setInterval(() => { notes[ni].classList.remove("on"); ni = (ni + 1) % notes.length; notes[ni].classList.add("on"); }, 4000);
 
 /* ---------- Hero slider (one slide per product) ---------- */
-const THEMES = ["s1", "s2", "s3"];
 const slidesBox = document.getElementById("slides");
 PRODUCTS.forEach((p, i) => {
-  const theme = THEMES[i % THEMES.length];
+  const studio = p.fit === "contain";            // white-background photos get a light honey backdrop
   const from = Math.min(...p.sizes.map(x => x[1]));
   const el = document.createElement("div");
-  el.className = "slide " + theme;
+  el.className = "slide " + (studio ? "studio" : "photo");
   el.setAttribute("role", "group");
   el.setAttribute("aria-roledescription", "slide");
   el.setAttribute("aria-label", `${i + 1} of ${PRODUCTS.length}`);
   el.innerHTML = `
-    <div class="txt">
-      <p class="kicker">${p.kicker || ""}</p>
-      <h2>${p.name}</h2>
-      <p class="sub">${p.desc}</p>
-      <p class="from">${p.sizes.length > 1 ? "From " : ""}<b>${rupee(from)}</b></p>
-      <a class="btn ${theme === "s1" ? "btn-maroon" : "btn-gold"}" href="#p-${p.id}">Shop now</a>
-    </div>
-    <div class="pic ${p.fit === "contain" ? "white" : ""}"><img src="${p.img}" alt="${p.name}" ${i ? 'loading="lazy"' : ""}></div>`;
-  el.querySelector("a").addEventListener("click", () => setFilter("all"));
+    <div class="bg" ${studio ? "" : `style="background-image:url('${p.img}')"`}></div>
+    <div class="inner">
+      <div class="txt">
+        <p class="kicker">${p.kicker || ""}</p>
+        <h2>${p.name}</h2>
+        <p class="sub">${p.desc}</p>
+        <p class="from">${p.sizes.length > 1 ? "From " : ""}<b>${rupee(from)}</b></p>
+        <div class="acts">
+          <a class="btn ${studio ? "btn-maroon" : "btn-gold"}" href="#p-${p.id}">Shop now</a>
+          <a class="btn btn-line" href="#shop" data-filter="all">All products</a>
+        </div>
+      </div>
+      <div class="pic"><img src="${p.img}" alt="${p.name}" ${i ? 'loading="lazy"' : ""}></div>
+    </div>`;
+  el.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setFilter("all")));
   slidesBox.appendChild(el);
 });
+const sliderBox = document.querySelector(".slider");
 const slidesEl = document.getElementById("slides"), slideEls = slidesEl.children, dotsEl = document.getElementById("dots");
 let cur = 0, timer;
 for (let i = 0; i < slideEls.length; i++){
@@ -757,6 +872,7 @@ function go(i){
   cur = (i + slideEls.length) % slideEls.length;
   slidesEl.style.transform = `translateX(-${cur * 100}%)`;
   [...dotsEl.children].forEach((d, j) => d.setAttribute("aria-current", j === cur));
+  sliderBox.classList.toggle("is-studio", slideEls[cur].classList.contains("studio"));
   [...slideEls].forEach((s, j) => s.setAttribute("aria-hidden", j !== cur));
 }
 function restart(){ clearInterval(timer); if (!reduceMotion) timer = setInterval(() => go(cur + 1), 5500); }
@@ -897,6 +1013,39 @@ document.querySelectorAll("[data-cert]").forEach(b => b.addEventListener("click"
 document.getElementById("certClose").onclick = () => certDlg.close();
 certDlg.addEventListener("click", e => { if (e.target === certDlg) certDlg.close(); });
 if (location.hash === "#fssai" && certDlg.showModal) certDlg.showModal();
+
+
+/* ---------- Morning atmosphere ---------- */
+document.documentElement.classList.add("js");
+(function(){
+  const h = new Date().getHours(), g = document.getElementById("greet");
+  if (g) g.textContent = h < 12 ? "Good morning ☀ Start your day with pure raw honey"
+                     : h < 17 ? "Good afternoon ☀ Pure raw honey, straight from nature"
+                     : "Good evening 🌿 Pure raw honey, straight from nature";
+  // floating sunlit pollen in the banner
+  const sun = document.querySelector(".sunlight");
+  if (sun && !reduceMotion){
+    const n = innerWidth < 700 ? 10 : 22;
+    for (let i = 0; i < n; i++){
+      const m = document.createElement("span"); m.className = "mote";
+      const size = 3 + Math.random() * 6;
+      m.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;bottom:${Math.random()*60}%;` +
+        `animation-duration:${9 + Math.random()*9}s;animation-delay:${-Math.random()*12}s;--dx:${(Math.random()*80-40).toFixed(0)}px`;
+      sun.appendChild(m);
+    }
+  }
+  // soft reveal as sections come into view
+  if (!("IntersectionObserver" in window)) return;
+  const els = document.querySelectorAll(".head, .col, .pgrid li, #grid .card, .rail .card, .steps4 li, .steps li, .gift-box, .story .photo, .story p, .story .points");
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
+  }), { threshold: .12, rootMargin: "0px 0px -40px 0px" });
+  els.forEach(el => {
+    const sib = [...el.parentElement.children].indexOf(el);
+    el.style.transitionDelay = (sib % 4) * 90 + "ms";
+    el.classList.add("reveal"); io.observe(el);
+  });
+})();
 
 document.getElementById("yr").textContent = new Date().getFullYear();
 renderCart();
